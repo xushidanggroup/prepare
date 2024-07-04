@@ -3,7 +3,7 @@ title: Bin Xu 许膑
 date: 2024-07-03
 type: person
 groups:
-  - Graduate Students
+  - Principle Investigator
 avatar: avatar.jpg
 role: 23 PhD Student in Biomedical Engineering
 ---

@@ -1,9 +1,9 @@
 ---
-title: Jinchen Mo 莫景丞
+title: JC 研究生
 date: 2024-07-03
 type: person
 groups:
   - Graduate Students
 avatar: avatar.jpg
-role: 24 Master's Student in Pharmacy
+role: 研究生
 ---
