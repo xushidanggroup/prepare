@@ -10,8 +10,6 @@ appearance:
   theme_night:
   font: native
   font_size: L
-  customCSS:
-    - "scss/template.scss"
 
 # SEO
 
@@ -77,6 +75,9 @@ features:
     url: 'https://github.com/<username>/<repository>'
     content_dir: content
     branch: main
+  avatar:
+    gravatar: false
+    shape: circle
   comment:
     provider: ''
     disqus:
