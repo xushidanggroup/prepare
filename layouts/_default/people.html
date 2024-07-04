@@ -1,9 +1,10 @@
 {{ define "main" }}
 <div class="people-section">
-    {{ range where .Site.Pages "Type" "people" }}
+    <h2>Principle Investigator</h2>
+    {{ range where .Site.Pages "Section" "people" }}
         {{ if eq .Params.user_groups "Principle Investigator" }}
             <div class="person">
-                <img src="{{ .RelPermalink }}/avatar.jpg" alt="{{ .Title }}">
+                <img src="{{ .RelPermalink }}avatar.jpg" alt="{{ .Title }}">
                 <h3>{{ .Title }}</h3>
                 <p>{{ .Params.position }}</p>
             </div>
@@ -11,11 +12,11 @@
     {{ end }}
 
     <h2>Graduate Students</h2>
-    {{ range where .Site.Pages "Type" "people" }}
+    {{ range where .Site.Pages "Section" "people" }}
         {{ if eq .Params.user_groups "Graduate Students" }}
             <div class="person">
-                <img src="{{ .RelPermalink }}/avatar.jpg" alt="{{ .Title }}">
-                <h3>{{ .Title }}</h3>
+                <img src="{{ .RelPermalink }}avatar.jpg" alt="{{ .Title }}">
+                <h3>{{ .Title }}"></h3>
                 <p>{{ .Params.position }}</p>
             </div>
         {{ end }}
