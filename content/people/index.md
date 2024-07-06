@@ -7,11 +7,11 @@ sections:
     content:
       title: Principle Investigator
       text: |
-        <div style="text-align: center;">
-          <div style="display: inline-block; text-align: left;">
-            <img src="Xu/avatar.jpg" alt="Xu 研究生" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
-            <p style="margin: 0; font-size: 14px; text-align: center;">Xu 研究生</p>
-            <p style="margin: 0; font-size: 12px; text-align: center;">Personal information and details about Xu.</p>
+        <div style="display: flex; align-items: center; justify-content: flex-start;">
+          <img src="Xu/avatar.jpg" alt="Xu 研究生" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-right: 20px;">
+          <div>
+            <p style="margin: 0; font-size: 14px;">Xu 研究生</p>
+            <p style="margin: 0; font-size: 12px;">Personal information and details about Xu.</p>
           </div>
         </div>
   - block: markdown
