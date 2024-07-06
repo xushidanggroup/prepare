@@ -130,11 +130,7 @@ sections:
             <p class="details">23 Master’s Student in Biomedical Engineering</p>
           </div>
         </div>
-
-  - block: markdown
-    content:
-      title: Undergraduate Students
-      text: |
+        ## Undergraduate Students
         <table style="width:100%; border-collapse: collapse;">
           <tr>
             <td style="width: 20%; padding: 8px; vertical-align: middle;">Ruoqi Chen 陈若琪</td>
@@ -157,10 +153,7 @@ sections:
             <td style="width: 45%; padding: 8px; vertical-align: middle;"></td>
           </tr>
         </table>
-  - block: markdown
-    content:
-      title: Alumni
-      text: |
+        ## Alumni
         <table style="width:100%; border-collapse: collapse;">
           <tr>
             <td style="width: 20%; padding: 8px; vertical-align: middle;">Lu Qiu 邱璐</td>
