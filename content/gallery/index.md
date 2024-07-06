@@ -1,5 +1,5 @@
 ---
-title: Gallery
+title:
 date: 2023-06-19T12:00:00Z
 ---
 
@@ -13,6 +13,38 @@ date: 2023-06-19T12:00:00Z
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .gallery-thumbnails {
+        display: flex;
+        justify-content: start; /* 修改为start以确保从头开始排列 */
+        gap: 10px;
+        overflow-x: auto;
+        white-space: nowrap;
+        width: 100%;
+        padding: 1px;
+        box-sizing: border-box; /* 确保padding和内容一起计算宽度 */
+    }
+
+    .thumbnail-container {
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        pointer-events: none;
+    }
+
+    .thumbnail-container img {
+        max-width: 150px;
+        max-height: 100px;
+        width: auto;
+        height: auto;
+        transition: transform 0.3s, border 0.3s;
+        pointer-events: auto;
+    }
+
+    .thumbnail-container img:hover {
+        transform: scale(1.1);
+        border: none;
     }
 
     .gallery-main {
@@ -52,104 +84,62 @@ date: 2023-06-19T12:00:00Z
         right: 5px;
     }
 
-    .gallery-thumbnails-container {
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-        margin-top: 10px;
+    .gallery-thumbnails::-webkit-scrollbar {
+        height: 8px;
     }
 
-    .gallery-thumbnails {
-        display: flex;
-        justify-content: start;
-        gap: 10px;
-        white-space: nowrap;
-        padding: 1px;
-        box-sizing: border-box;
-        transition: transform 0.3s ease-in-out;
+    .gallery-thumbnails::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
     }
 
-    .thumbnail-container {
-        display: inline-block;
-        cursor: pointer;
-        position: relative;
+    .gallery-thumbnails::-webkit-scrollbar-thumb:hover {
+        background: #555;
     }
 
-    .thumbnail-container img {
-        max-width: 150px;
-        max-height: 100px;
-        width: auto;
-        height: auto;
-        transition: transform 0.3s, border 0.3s;
-    }
-
-    .thumbnail-container img:hover {
-        transform: scale(1.1);
-        border: none;
-    }
-
-    .scroll-zone {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 100px;
-        z-index: 1;
-    }
-
-    .scroll-zone.left {
-        left: 0;
-    }
-
-    .scroll-zone.right {
-        right: 0;
-    }
-
-    .scroll-zone:hover {
-        background-color: rgba(0, 0, 0, 0.1);
+    .gallery-thumbnails::-webkit-scrollbar-track {
+        background: #f1f1f1;
     }
 </style>
 
 <div class="gallery">
+    <h1>Gallery</h1>
+    <div class="gallery-thumbnails">
+        <div class="thumbnail-container" onclick="showImage(0, true)">
+            <img src="/images/清远漂流.jpg" alt="Thumbnail 清远漂流">
+        </div>
+        <div class="thumbnail-container" onclick="showImage(1, true)">
+            <img src="/images/冬至.jpg" alt="Thumbnail 冬至">
+        </div>
+        <div class="thumbnail-container" onclick="showImage(2, true)">
+            <img src="/images/石门.jpg" alt="Thumbnail 石门">
+        </div>
+        <div class="thumbnail-container" onclick="showImage(3, true)">
+            <img src="/images/石门1.jpg" alt="Thumbnail 石门1">
+        </div>
+        <div class="thumbnail-container" onclick="showImage(4, true)">
+            <img src="/images/石门2.jpg" alt="Thumbnail 石门2">
+        </div>
+        <div class="thumbnail-container" onclick="showImage(5, true)">
+            <img src="/images/红林花海.jpg" alt="Thumbnail 红林花海">
+        </div>
+        <div class="thumbnail-container" onclick="showImage(6, true)">
+            <img src="/images/羽毛球赛.jpg" alt="Thumbnail 羽毛球赛">
+        </div>
+        <div class="thumbnail-container" onclick="showImage(7, true)">
+            <img src="/images/课题组合照.jpg" alt="Thumbnail 课题组合照">
+        </div>
+        <div class="thumbnail-container" onclick="showImage(8, true)">
+            <img src="/images/毕业典礼合照.jpg" alt="Thumbnail 毕业典礼合照">
+        </div>
+        <div class="thumbnail-container" onclick="showImage(9, true)">
+            <img src="/images/龙林毕业聚餐.jpg" alt="Thumbnail 龙林毕业聚餐">
+        </div>
+    </div>
     <div class="gallery-main">
         <button class="gallery-nav left" onclick="showPreviousImage()">&#10094;</button>
         <img src="/images/冬至.jpg" alt="Main Image" id="mainImage">
         <button class="gallery-nav right" onclick="showNextImage()">&#10095;</button>
-    </div>
-    <div class="gallery-thumbnails-container">
-        <div class="scroll-zone left" id="scrollLeft" style="height: 100px;"></div>
-        <div class="gallery-thumbnails" id="thumbnails">
-            <div class="thumbnail-container" onclick="showImage(0, true)">
-                <img src="/images/清远漂流.jpg" alt="Thumbnail 清远漂流">
-            </div>
-            <div class="thumbnail-container" onclick="showImage(1, true)">
-                <img src="/images/冬至.jpg" alt="Thumbnail 冬至">
-            </div>
-            <div class="thumbnail-container" onclick="showImage(2, true)">
-                <img src="/images/石门.jpg" alt="Thumbnail 石门">
-            </div>
-            <div class="thumbnail-container" onclick="showImage(3, true)">
-                <img src="/images/石门1.jpg" alt="Thumbnail 石门1">
-            </div>
-            <div class="thumbnail-container" onclick="showImage(4, true)">
-                <img src="/images/石门2.jpg" alt="Thumbnail 石门2">
-            </div>
-            <div class="thumbnail-container" onclick="showImage(5, true)">
-                <img src="/images/红林花海.jpg" alt="Thumbnail 红林花海">
-            </div>
-            <div class="thumbnail-container" onclick="showImage(6, true)">
-                <img src="/images/羽毛球赛.jpg" alt="Thumbnail 羽毛球赛">
-            </div>
-            <div class="thumbnail-container" onclick="showImage(7, true)">
-                <img src="/images/课题组合照.jpg" alt="Thumbnail 课题组合照">
-            </div>
-            <div class="thumbnail-container" onclick="showImage(8, true)">
-                <img src="/images/毕业典礼合照.jpg" alt="Thumbnail 毕业典礼合照">
-            </div>
-            <div class="thumbnail-container" onclick="showImage(9, true)">
-                <img src="/images/龙林毕业聚餐.jpg" alt="Thumbnail 龙林毕业聚餐">
-            </div>
-        </div>
-        <div class="scroll-zone right" id="scrollRight" style="height: 100px;"></div>
     </div>
 </div>
 
@@ -169,10 +159,8 @@ date: 2023-06-19T12:00:00Z
 
     let currentIndex = 1;
     let autoSwitchInterval;
-    let scrollInterval;
-    const transitionTime = 1000;
-    const quickTransitionTime = 500;
-    const scrollSpeed = 2;
+    const transitionTime = 1000; // 1 second
+    const quickTransitionTime = 500; // 0.5 second
 
     function showImage(index, quick = false) {
         currentIndex = index;
@@ -205,7 +193,7 @@ date: 2023-06-19T12:00:00Z
     }
 
     function autoSwitchImages() {
-        autoSwitchInterval = setInterval(showNextImage, 5000);
+        autoSwitchInterval = setInterval(showNextImage, 5000); // 5 seconds
     }
 
     function resetAutoSwitch() {
@@ -213,26 +201,7 @@ date: 2023-06-19T12:00:00Z
         autoSwitchImages();
     }
 
-    function startScrolling(direction) {
-        scrollInterval = setInterval(() => {
-            const thumbnails = document.getElementById('thumbnails');
-            thumbnails.scrollBy({ left: direction * scrollSpeed, behavior: 'smooth' });
-        }, 20);
-    }
-
-    function stopScrolling() {
-        clearInterval(scrollInterval);
-    }
-
     document.addEventListener('DOMContentLoaded', () => {
         autoSwitchImages();
-
-        const scrollLeftZone = document.getElementById('scrollLeft');
-        const scrollRightZone = document.getElementById('scrollRight');
-
-        scrollLeftZone.addEventListener('mouseenter', () => startScrolling(-1));
-        scrollLeftZone.addEventListener('mouseleave', stopScrolling);
-        scrollRightZone.addEventListener('mouseenter', () => startScrolling(1));
-        scrollRightZone.addEventListener('mouseleave', stopScrolling);
     });
 </script>
