@@ -27,8 +27,8 @@ sections:
             justify-content: space-around;
           }
           .student {
-            flex: 1 1 150px;
-            max-width: 150px;
+            flex: 1 1 calc(20% - 20px);
+            max-width: calc(20% - 20px);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -50,6 +50,30 @@ sections:
           }
           .student .details {
             font-size: 12px;
+          }
+          @media (max-width: 1200px) {
+            .student {
+              flex: 1 1 calc(25% - 20px);
+              max-width: calc(25% - 20px);
+            }
+          }
+          @media (max-width: 992px) {
+            .student {
+              flex: 1 1 calc(33.33% - 20px);
+              max-width: calc(33.33% - 20px);
+            }
+          }
+          @media (max-width: 768px) {
+            .student {
+              flex: 1 1 calc(50% - 20px);
+              max-width: calc(50% - 20px);
+            }
+          }
+          @media (max-width: 576px) {
+            .student {
+              flex: 1 1 100%;
+              max-width: 100%;
+            }
           }
         </style>
         <div class="student-container">
