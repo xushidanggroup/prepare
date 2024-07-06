@@ -25,11 +25,14 @@ sections:
             margin-bottom: 20px;
           }
           .person img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 10px;
+              width: 150px;
+              height: 150px;
+              object-fit: cover;
+              border-radius: 50%;
+              margin-bottom: 10px;
+              image-rendering: -webkit-optimize-contrast; /* Safari */
+              image-rendering: crisp-edges;
+              image-rendering: pixelated;
           }
           .person p {
             margin: 0;
