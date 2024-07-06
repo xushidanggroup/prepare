@@ -40,21 +40,25 @@ sections:
           .person .details {
             font-size: 12px;
           }
-          .person .email, .person .scholar {
+          .person .icons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 5px;
+          }
+          .person .icons .icon {
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin-top: 5px;
             cursor: pointer;
           }
-          .person .email .fa-envelope, .person .scholar .fa-graduation-cap {
+          .person .icons .icon .fa-envelope, .person .icons .icon .fa-graduation-cap {
             margin-right: 5px;
           }
-          .person .email span, .person .scholar span {
+          .person .icons .icon span {
             display: none;
             font-size: 12px;
           }
-          .person .email:hover span, .person .scholar:hover span {
+          .person .icons .icon:hover span {
             display: inline;
           }
           @media (max-width: 1200px) {
@@ -99,11 +103,13 @@ sections:
             <img src="Xu/avatar.jpg" alt="Shidang Xu 许适当">
             <p class="name">Shidang Xu 许适当</p>
             <p class="details">Professor in Biomedical Engineering</p>
-            <div class="email" onclick="copyToClipboard('xusd@scut.edu.cn')">
-              <i class="fas fa-envelope"></i><span>xusd@scut.edu.cn</span>
-            </div>
-            <div class="scholar" onclick="window.open('https://scholar.google.com/citations?user=HiGQESUAAAAJ&hl=zh-CN&oi=ao')">
-              <i class="fas fa-graduation-cap"></i><span>Google Scholar</span>
+            <div class="icons">
+              <div class="icon email" onclick="copyToClipboard('xusd@scut.edu.cn')">
+                <i class="fas fa-envelope"></i><span>xusd@scut.edu.cn</span>
+              </div>
+              <div class="icon scholar" onclick="window.open('https://scholar.google.com/citations?user=HiGQESUAAAAJ&hl=zh-CN&oi=ao')">
+                <i class="fas fa-graduation-cap"></i><span>Google Scholar</span>
+              </div>
             </div>
           </div>
         </div>
