@@ -92,6 +92,10 @@ sections:
           }
         </script>
         
+        <div class="group-photo">
+          <img src="/images/group_photo.jpg" alt="Group Photo">
+        </div>
+
         ---
 
         ## Principle Investigator
