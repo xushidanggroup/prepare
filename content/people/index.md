@@ -20,68 +20,70 @@ sections:
       title: Principle Investigator
       text: |
         <div style="text-align: left;">
-          <img src="Bin/avatar.jpg" alt="Bin Xu" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 10px 0;">
-          <p style="margin: 0;">Bin Xu 许膑</p>
-          <p style="margin: 0;">23 PhD Student in Biomedical Engineering</p>
+          <img src="Xu/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 10px 0;">
+          <p style="margin: 0;">Xu 研究生</p>
+          <p style="margin: 0;">Personal information and details about Xu.</p>
         </div>
   - block: markdown
     content:
       title: Graduate Students
       text: |
-        <div style="text-align: left;">
-          <img src="JC/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 10px 0;">
-          <p style="margin: 0;">JC 研究生</p>
-          <p style="margin: 0;">Personal information and details about JC.</p>
-        </div>
-        <div style="text-align: left;">
-          <img src="CC/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 10px 0;">
-          <p style="margin: 0;">CC 研究生</p>
-          <p style="margin: 0;">Personal information and details about CC.</p>
-        </div>
-        <div style="text-align: left;">
-          <img src="JD/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 10px 0;">
-          <p style="margin: 0;">JD 研究生</p>
-          <p style="margin: 0;">Personal information and details about JD.</p>
-        </div>
-        <div style="text-align: left;">
-          <img src="LP/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 10px 0;">
-          <p style="margin: 0;">LP 研究生</p>
-          <p style="margin: 0;">Personal information and details about LP.</p>
-        </div>
-        <div style="text-align: left;">
-          <img src="MT/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 10px 0;">
-          <p style="margin: 0;">MT 研究生</p>
-          <p style="margin: 0;">Personal information and details about MT.</p>
-        </div>
-        <div style="text-align: left;">
-          <img src="NB/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 10px 0;">
-          <p style="margin: 0;">NB 研究生</p>
-          <p style="margin: 0;">Personal information and details about NB.</p>
-        </div>
-        <div style="text-align: left;">
-          <img src="OY/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 10px 0;">
-          <p style="margin: 0;">OY 研究生</p>
-          <p style="margin: 0;">Personal information and details about OY.</p>
-        </div>
-        <div style="text-align: left;">
-          <img src="SC/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 10px 0;">
-          <p style="margin: 0;">SC 研究生</p>
-          <p style="margin: 0;">Personal information and details about SC.</p>
-        </div>
-        <div style="text-align: left;">
-          <img src="Xu/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 10px 0;">
-          <p style="margin: 0;">Xu 研究生</p>
-          <p style="margin: 0;">Personal information and details about Xu.</p>
-        </div>
-        <div style="text-align: left;">
-          <img src="YH/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 10px 0;">
-          <p style="margin: 0;">YH 研究生</p>
-          <p style="margin: 0;">Personal information and details about YH.</p>
-        </div>
-        <div style="text-align: left;">
-          <img src="YJ/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 10px 0;">
-          <p style="margin: 0;">YJ 研究生</p>
-          <p style="margin: 0;">Personal information and details about YJ.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+          <div style="text-align: left;">
+            <img src="Bin/avatar.jpg" alt="Bin Xu" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 10px 0;">
+            <p style="margin: 0;">Bin Xu 许膑</p>
+            <p style="margin: 0;">23 PhD Student in Biomedical Engineering</p>
+          </div>
+          <div style="text-align: left;">
+            <img src="JC/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 10px 0;">
+            <p style="margin: 0;">JC 研究生</p>
+            <p style="margin: 0;">Personal information and details about JC.</p>
+          </div>
+          <div style="text-align: left;">
+            <img src="CC/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 10px 0;">
+            <p style="margin: 0;">CC 研究生</p>
+            <p style="margin: 0;">Personal information and details about CC.</p>
+          </div>
+          <div style="text-align: left;">
+            <img src="JD/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 10px 0;">
+            <p style="margin: 0;">JD 研究生</p>
+            <p style="margin: 0;">Personal information and details about JD.</p>
+          </div>
+          <div style="text-align: left;">
+            <img src="LP/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 10px 0;">
+            <p style="margin: 0;">LP 研究生</p>
+            <p style="margin: 0;">Personal information and details about LP.</p>
+          </div>
+          <div style="text-align: left;">
+            <img src="MT/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 10px 0;">
+            <p style="margin: 0;">MT 研究生</p>
+            <p style="margin: 0;">Personal information and details about MT.</p>
+          </div>
+          <div style="text-align: left;">
+            <img src="NB/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 10px 0;">
+            <p style="margin: 0;">NB 研究生</p>
+            <p style="margin: 0;">Personal information and details about NB.</p>
+          </div>
+          <div style="text-align: left;">
+            <img src="OY/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 10px 0;">
+            <p style="margin: 0;">OY 研究生</p>
+            <p style="margin: 0;">Personal information and details about OY.</p>
+          </div>
+          <div style="text-align: left;">
+            <img src="SC/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 10px 0;">
+            <p style="margin: 0;">SC 研究生</p>
+            <p style="margin: 0;">Personal information and details about SC.</p>
+          </div>
+          <div style="text-align: left;">
+            <img src="YH/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 10px 0;">
+            <p style="margin: 0;">YH 研究生</p>
+            <p style="margin: 0;">Personal information and details about YH.</p>
+          </div>
+          <div style="text-align: left;">
+            <img src="YJ/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 10px 0;">
+            <p style="margin: 0;">YJ 研究生</p>
+            <p style="margin: 0;">Personal information and details about YJ.</p>
+          </div>
         </div>
   - block: markdown
     content:
