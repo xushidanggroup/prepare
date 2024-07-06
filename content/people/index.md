@@ -198,9 +198,11 @@ sections:
           </div>
         </div>
 
+        ---
+      
         ## Undergraduate Students
 
-        <table style="width:100%; border-collapse: collapse;">
+        <table style="width:100%; border-collapse: collapse; border: none;">
           <tr>
             <td style="width: 20%; padding: 8px; vertical-align: middle;">Ruoqi Chen 陈若琪</td>
             <td style="width: 35%; padding: 8px; vertical-align: middle;">Biomedical Engineering at SCUT (2021)</td>
@@ -223,9 +225,11 @@ sections:
           </tr>
         </table>
 
+        ---
+
         ## Alumni
 
-        <table style="width:100%; border-collapse: collapse;">
+        <table style="width:100%; border-collapse: collapse; border: none;">
           <tr>
             <td style="width: 20%; padding: 8px; vertical-align: middle;">Lu Qiu 邱璐</td>
             <td style="width: 35%; padding: 8px; vertical-align: middle;">Biomedical Engineering at SCUT (2019-2023)</td>
