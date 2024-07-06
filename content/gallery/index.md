@@ -4,11 +4,6 @@ date: 2023-06-19T12:00:00Z
 ---
 
 <style>
-    h1 {
-        text-align: center;
-        margin-bottom: 1px;
-    }
-
     .gallery-thumbnails {
         display: flex;
         justify-content: start; /* 修改为start以确保从头开始排列 */
