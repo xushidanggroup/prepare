@@ -24,7 +24,7 @@ sections:
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            justify-content: space-around;
+            justify-content: flex-start; /* Align items to the start */
           }
           .student {
             flex: 1 1 calc(20% - 20px);
