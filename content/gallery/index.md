@@ -9,36 +9,10 @@ date: 2023-06-19T12:00:00Z
         margin-bottom: 1px;
     }
 
-    .gallery-thumbnails {
+    .gallery {
         display: flex;
-        justify-content: start; /* 修改为start以确保从头开始排列 */
-        gap: 10px;
-        overflow-x: auto;
-        white-space: nowrap;
-        width: 100%;
-        padding: 1px;
-        box-sizing: border-box; /* 确保padding和内容一起计算宽度 */
-    }
-
-    .thumbnail-container {
-        display: inline-block;
-        cursor: pointer;
-        position: relative;
-        pointer-events: none;
-    }
-
-    .thumbnail-container img {
-        max-width: 150px;
-        max-height: 100px;
-        width: auto;
-        height: auto;
-        transition: transform 0.3s, border 0.3s;
-        pointer-events: auto;
-    }
-
-    .thumbnail-container img:hover {
-        transform: scale(1.1);
-        border: none;
+        flex-direction: column;
+        align-items: center;
     }
 
     .gallery-main {
@@ -78,6 +52,39 @@ date: 2023-06-19T12:00:00Z
         right: 5px;
     }
 
+    .gallery-thumbnails {
+        display: flex;
+        justify-content: start;
+        gap: 10px;
+        overflow-x: auto;
+        white-space: nowrap;
+        width: 100%;
+        padding: 1px;
+        box-sizing: border-box;
+        margin-top: 20px;
+    }
+
+    .thumbnail-container {
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        pointer-events: none;
+    }
+
+    .thumbnail-container img {
+        max-width: 150px;
+        max-height: 100px;
+        width: auto;
+        height: auto;
+        transition: transform 0.3s, border 0.3s;
+        pointer-events: auto;
+    }
+
+    .thumbnail-container img:hover {
+        transform: scale(1.1);
+        border: none;
+    }
+
     .gallery-thumbnails::-webkit-scrollbar {
         height: 8px;
     }
@@ -97,6 +104,11 @@ date: 2023-06-19T12:00:00Z
 </style>
 
 <div class="gallery">
+    <div class="gallery-main">
+        <button class="gallery-nav left" onclick="showPreviousImage()">&#10094;</button>
+        <img src="/images/冬至.jpg" alt="Main Image" id="mainImage">
+        <button class="gallery-nav right" onclick="showNextImage()">&#10095;</button>
+    </div>
     <div class="gallery-thumbnails">
         <div class="thumbnail-container" onclick="showImage(0, true)">
             <img src="/images/清远漂流.jpg" alt="Thumbnail 清远漂流">
@@ -128,11 +140,6 @@ date: 2023-06-19T12:00:00Z
         <div class="thumbnail-container" onclick="showImage(9, true)">
             <img src="/images/龙林毕业聚餐.jpg" alt="Thumbnail 龙林毕业聚餐">
         </div>
-    </div>
-    <div class="gallery-main">
-        <button class="gallery-nav left" onclick="showPreviousImage()">&#10094;</button>
-        <img src="/images/冬至.jpg" alt="Main Image" id="mainImage">
-        <button class="gallery-nav right" onclick="showNextImage()">&#10095;</button>
     </div>
 </div>
 
