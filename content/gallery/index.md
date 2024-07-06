@@ -1,5 +1,5 @@
 ---
-title:
+title: Gallery
 date: 2023-06-19T12:00:00Z
 ---
 
@@ -7,12 +7,6 @@ date: 2023-06-19T12:00:00Z
     h1 {
         text-align: center;
         margin-bottom: 1px;
-    }
-
-    .gallery {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
 
     .gallery-thumbnails {
