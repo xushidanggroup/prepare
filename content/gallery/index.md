@@ -210,7 +210,7 @@ date: 2023-06-19T12:00:00Z
         autoSwitchImages();
 
         const thumbnails = document.getElementById('thumbnails');
-        const scrollSpeed = 2; // 调整滑动速度
+        const scrollSpeed = 10; // 调整滑动速度
 
         thumbnails.addEventListener('mousemove', (e) => {
             const { left, right } = thumbnails.getBoundingClientRect();
