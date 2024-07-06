@@ -30,6 +30,7 @@ sections:
               object-fit: cover;
               border-radius: 50%;
               margin-bottom: 10px;
+              filter: blur(0.5px);
               mix-blend-mode: multiply;
           }
           .person p {
