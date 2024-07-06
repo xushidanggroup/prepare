@@ -92,7 +92,7 @@ date: 2023-06-19T12:00:00Z
         position: absolute;
         top: 0;
         bottom: 0;
-        width: 100px;
+        width: 50px; /* 调整悬停区域宽度 */
         z-index: 1;
     }
 
@@ -116,7 +116,6 @@ date: 2023-06-19T12:00:00Z
         <button class="gallery-nav right" onclick="showNextImage()">&#10095;</button>
     </div>
     <div class="gallery-thumbnails-container">
-        <div class="scroll-zone left" id="scrollLeft" style="height: 100px;"></div>
         <div class="gallery-thumbnails" id="thumbnails">
             <div class="thumbnail-container" onclick="showImage(0, true)">
                 <img src="/images/清远漂流.jpg" alt="Thumbnail 清远漂流">
@@ -149,7 +148,8 @@ date: 2023-06-19T12:00:00Z
                 <img src="/images/龙林毕业聚餐.jpg" alt="Thumbnail 龙林毕业聚餐">
             </div>
         </div>
-        <div class="scroll-zone right" id="scrollRight" style="height: 100px;"></div>
+        <div class="scroll-zone left" id="scrollLeft" style="height: 100%;"></div>
+        <div class="scroll-zone right" id="scrollRight" style="height: 100%;"></div>
     </div>
 </div>
 
