@@ -61,6 +61,7 @@ date: 2023-06-19T12:00:00Z
         width: 100%;
         padding: 1px;
         box-sizing: border-box;
+        position: relative;
     }
 
     .thumbnail-container {
@@ -84,27 +85,26 @@ date: 2023-06-19T12:00:00Z
         border: none;
     }
 
-    .gallery-slider {
-        width: 100%;
-        text-align: center;
-        margin: 20px 0;
+    .scroll-button {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50px;
+        background-color: rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        z-index: 1;
     }
 
-    .gallery-thumbnails::-webkit-scrollbar {
-        height: 8px;
+    .scroll-button.left {
+        left: 0;
     }
 
-    .gallery-thumbnails::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 4px;
+    .scroll-button.right {
+        right: 0;
     }
 
-    .gallery-thumbnails::-webkit-scrollbar-thumb:hover {
-        background: #555;
-    }
-
-    .gallery-thumbnails::-webkit-scrollbar-track {
-        background: #f1f1f1;
+    .scroll-button:hover {
+        background-color: rgba(0, 0, 0, 0.7);
     }
 </style>
 
@@ -115,6 +115,8 @@ date: 2023-06-19T12:00:00Z
         <button class="gallery-nav right" onclick="showNextImage()">&#10095;</button>
     </div>
     <div class="gallery-thumbnails" id="thumbnails">
+        <div class="scroll-button left" id="scrollLeft"></div>
+        <div class="scroll-button right" id="scrollRight"></div>
         <div class="thumbnail-container" onclick="showImage(0, true)">
             <img src="/images/清远漂流.jpg" alt="Thumbnail 清远漂流">
         </div>
@@ -222,22 +224,12 @@ date: 2023-06-19T12:00:00Z
     document.addEventListener('DOMContentLoaded', () => {
         autoSwitchImages();
 
-        const thumbnails = document.getElementById('thumbnails');
-        const scrollArea = 50; // 悬停触发滚动的区域宽度
+        const scrollLeftButton = document.getElementById('scrollLeft');
+        const scrollRightButton = document.getElementById('scrollRight');
 
-        thumbnails.addEventListener('mousemove', (e) => {
-            const { left, right } = thumbnails.getBoundingClientRect();
-            const mouseX = e.clientX - left;
-
-            if (mouseX < scrollArea) {
-                startScrolling(-1); // 向左滚动
-            } else if (mouseX > right - left - scrollArea) {
-                startScrolling(1); // 向右滚动
-            } else {
-                stopScrolling();
-            }
-        });
-
-        thumbnails.addEventListener('mouseleave', stopScrolling);
+        scrollLeftButton.addEventListener('mouseenter', () => startScrolling(-1));
+        scrollLeftButton.addEventListener('mouseleave', stopScrolling);
+        scrollRightButton.addEventListener('mouseenter', () => startScrolling(1));
+        scrollRightButton.addEventListener('mouseleave', stopScrolling);
     });
 </script>
