@@ -41,12 +41,30 @@ date: 2024-07-03
     }
 </style>
 
+<h1>The Team</h1>
+
 <div class="people-section">
-    {{ range .Pages }}
-        <div class="person-container">
-            <img src="{{ .RelPermalink }}avatar.jpg" alt="{{ .Title }}">
-            <div class="person-name">{{ .Title }}</div>
-            <div class="person-role">{{ .Params.role }}</div>
-        </div>
+    {{ range .Site.RegularPages }}
+        {{ if in .Params.groups "Principle Investigator" }}
+            <div class="person-container">
+                <img src="{{ .RelPermalink }}avatar.jpg" alt="{{ .Title }}">
+                <div class="person-name">{{ .Title }}</div>
+                <div class="person-role">{{ .Params.role }}</div>
+            </div>
+        {{ end }}
+    {{ end }}
+</div>
+
+<h1>Graduate Students</h1>
+
+<div class="people-section">
+    {{ range .Site.RegularPages }}
+        {{ if in .Params.groups "Graduate Students" }}
+            <div class="person-container">
+                <img src="{{ .RelPermalink }}avatar.jpg" alt="{{ .Title }}">
+                <div class="person-name">{{ .Title }}</div>
+                <div class="person-role">{{ .Params.role }}</div>
+            </div>
+        {{ end }}
     {{ end }}
 </div>
