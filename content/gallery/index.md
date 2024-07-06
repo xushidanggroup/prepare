@@ -61,7 +61,6 @@ date: 2023-06-19T12:00:00Z
         width: 100%;
         padding: 1px;
         box-sizing: border-box;
-        margin-top: 20px;
     }
 
     .thumbnail-container {
@@ -83,6 +82,12 @@ date: 2023-06-19T12:00:00Z
     .thumbnail-container img:hover {
         transform: scale(1.1);
         border: none;
+    }
+
+    .gallery-slider {
+        width: 100%;
+        text-align: center;
+        margin: 20px 0;
     }
 
     .gallery-thumbnails::-webkit-scrollbar {
@@ -203,5 +208,18 @@ date: 2023-06-19T12:00:00Z
 
     document.addEventListener('DOMContentLoaded', () => {
         autoSwitchImages();
+
+        const thumbnails = document.querySelector('.gallery-thumbnails');
+        
+        thumbnails.addEventListener('mousemove', (e) => {
+            const { left, right } = thumbnails.getBoundingClientRect();
+            const scrollSpeed = 2; // 调整滑动速度
+
+            if (e.clientX < left + 100) { // 靠近左侧100px区域
+                thumbnails.scrollBy({ left: -scrollSpeed, behavior: 'smooth' });
+            } else if (e.clientX > right - 100) { // 靠近右侧100px区域
+                thumbnails.scrollBy({ left: scrollSpeed, behavior: 'smooth' });
+            }
+        });
     });
 </script>
