@@ -5,7 +5,7 @@ type: landing
 sections:
   - block: markdown
     content:
-      title: <span style="text-align: left; display: block;">Principle Investigator</span>
+      title: Principle Investigator
       text: |
         <div style="display: flex; align-items: center; justify-content: flex-start;">
           <img src="Xu/avatar.jpg" alt="Shidang Xu 许适当" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-right: 20px;">
@@ -16,7 +16,7 @@ sections:
         </div>
   - block: markdown
     content:
-      title: <span style="text-align: left; display: block;">Graduate Students</span>
+      title: Graduate Students
       text: |
         <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-around;">
           <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
@@ -78,7 +78,7 @@ sections:
 
   - block: markdown
     content:
-      title: <span style="text-align: left; display: block;">Undergraduate Students</span>
+      title: Undergraduate Students
       text: |
         <table style="width:100%; border-collapse: collapse;">
           <tr>
@@ -104,7 +104,7 @@ sections:
         </table>
   - block: markdown
     content:
-      title: <span style="text-align: left; display: block;">Alumni</span>
+      title: Alumni
       text: |
         <table style="width:100%; border-collapse: collapse;">
           <tr>
