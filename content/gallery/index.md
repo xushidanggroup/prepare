@@ -52,6 +52,12 @@ date: 2023-06-19T12:00:00Z
         right: 5px;
     }
 
+    .gallery-slider {
+        width: 100%;
+        text-align: center;
+        margin: 20px 0;
+    }
+
     .gallery-thumbnails {
         display: flex;
         justify-content: start;
@@ -61,7 +67,6 @@ date: 2023-06-19T12:00:00Z
         width: 100%;
         padding: 1px;
         box-sizing: border-box;
-        margin-top: 20px;
     }
 
     .thumbnail-container {
@@ -108,6 +113,10 @@ date: 2023-06-19T12:00:00Z
         <button class="gallery-nav left" onclick="showPreviousImage()">&#10094;</button>
         <img src="/images/冬至.jpg" alt="Main Image" id="mainImage">
         <button class="gallery-nav right" onclick="showNextImage()">&#10095;</button>
+    </div>
+    <div class="gallery-slider">
+        <!-- 滑动条可以放置在这里 -->
+        <input type="range" min="1" max="10" value="1" id="slider" oninput="showImage(this.value - 1, true)">
     </div>
     <div class="gallery-thumbnails">
         <div class="thumbnail-container" onclick="showImage(0, true)">
@@ -165,6 +174,9 @@ date: 2023-06-19T12:00:00Z
     function showImage(index, quick = false) {
         currentIndex = index;
         const mainImage = document.getElementById('mainImage');
+        const slider = document.getElementById('slider');
+        
+        slider.value = index + 1;
 
         if (quick) {
             mainImage.style.transition = `opacity ${quickTransitionTime}ms ease-in-out`;
