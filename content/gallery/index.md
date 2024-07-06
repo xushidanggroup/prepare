@@ -4,6 +4,11 @@ date: 2023-06-19T12:00:00Z
 ---
 
 <style>
+    h1 {
+        text-align: center;
+        margin-bottom: 1px;
+    }
+
     .gallery-thumbnails {
         display: flex;
         justify-content: start; /* 修改为start以确保从头开始排列 */
@@ -92,7 +97,6 @@ date: 2023-06-19T12:00:00Z
 </style>
 
 <div class="gallery">
-    <h1>Gallery</h1>
     <div class="gallery-thumbnails">
         <div class="thumbnail-container" onclick="showImage(0, true)">
             <img src="/images/清远漂流.jpg" alt="Thumbnail 清远漂流">
