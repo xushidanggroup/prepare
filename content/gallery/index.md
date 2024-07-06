@@ -1,5 +1,5 @@
 ---
-title: Gallery
+title:
 date: 2023-06-19T12:00:00Z
 ---
 
@@ -13,6 +13,38 @@ date: 2023-06-19T12:00:00Z
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .gallery-thumbnails {
+        display: flex;
+        justify-content: start; /* 修改为start以确保从头开始排列 */
+        gap: 10px;
+        overflow-x: auto;
+        white-space: nowrap;
+        width: 100%;
+        padding: 1px;
+        box-sizing: border-box; /* 确保padding和内容一起计算宽度 */
+    }
+
+    .thumbnail-container {
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        pointer-events: none;
+    }
+
+    .thumbnail-container img {
+        max-width: 150px;
+        max-height: 100px;
+        width: auto;
+        height: auto;
+        transition: transform 0.3s, border 0.3s;
+        pointer-events: auto;
+    }
+
+    .thumbnail-container img:hover {
+        transform: scale(1.1);
+        border: none;
     }
 
     .gallery-main {
@@ -52,44 +84,6 @@ date: 2023-06-19T12:00:00Z
         right: 5px;
     }
 
-    .gallery-thumbnails {
-        display: flex;
-        justify-content: start;
-        gap: 10px;
-        overflow-x: auto;
-        white-space: nowrap;
-        width: 100%;
-        padding: 1px;
-        box-sizing: border-box;
-    }
-
-    .thumbnail-container {
-        display: inline-block;
-        cursor: pointer;
-        position: relative;
-        pointer-events: none;
-    }
-
-    .thumbnail-container img {
-        max-width: 150px;
-        max-height: 100px;
-        width: auto;
-        height: auto;
-        transition: transform 0.3s, border 0.3s;
-        pointer-events: auto;
-    }
-
-    .thumbnail-container img:hover {
-        transform: scale(1.1);
-        border: none;
-    }
-
-    .gallery-slider {
-        width: 100%;
-        text-align: center;
-        margin: 20px 0;
-    }
-
     .gallery-thumbnails::-webkit-scrollbar {
         height: 8px;
     }
@@ -109,11 +103,7 @@ date: 2023-06-19T12:00:00Z
 </style>
 
 <div class="gallery">
-    <div class="gallery-main">
-        <button class="gallery-nav left" onclick="showPreviousImage()">&#10094;</button>
-        <img src="/images/冬至.jpg" alt="Main Image" id="mainImage">
-        <button class="gallery-nav right" onclick="showNextImage()">&#10095;</button>
-    </div>
+    <h1>Gallery</h1>
     <div class="gallery-thumbnails">
         <div class="thumbnail-container" onclick="showImage(0, true)">
             <img src="/images/清远漂流.jpg" alt="Thumbnail 清远漂流">
@@ -146,9 +136,10 @@ date: 2023-06-19T12:00:00Z
             <img src="/images/龙林毕业聚餐.jpg" alt="Thumbnail 龙林毕业聚餐">
         </div>
     </div>
-    <div class="gallery-slider">
-        <!-- 滑动条在这里 -->
-        <input type="range" min="1" max="10" value="1" id="slider" oninput="showImage(this.value - 1, true)">
+    <div class="gallery-main">
+        <button class="gallery-nav left" onclick="showPreviousImage()">&#10094;</button>
+        <img src="/images/冬至.jpg" alt="Main Image" id="mainImage">
+        <button class="gallery-nav right" onclick="showNextImage()">&#10095;</button>
     </div>
 </div>
 
@@ -174,9 +165,6 @@ date: 2023-06-19T12:00:00Z
     function showImage(index, quick = false) {
         currentIndex = index;
         const mainImage = document.getElementById('mainImage');
-        const slider = document.getElementById('slider');
-
-        slider.value = index + 1;
 
         if (quick) {
             mainImage.style.transition = `opacity ${quickTransitionTime}ms ease-in-out`;
