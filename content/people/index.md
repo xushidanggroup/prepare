@@ -25,13 +25,13 @@ sections:
             margin-bottom: 20px;
           }
           .person img {
-              width: 150px;
-              height: 150px;
-              object-fit: cover;
-              border-radius: 50%;
-              margin-bottom: 10px;
-              filter: blur(0.5px);
-              mix-blend-mode: multiply;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            filter: blur(0.5px);
+            mix-blend-mode: multiply;
           }
           .person p {
             margin: 0;
@@ -84,6 +84,7 @@ sections:
             }
           }
         </style>
+
         <script>
           function copyToClipboard(email) {
             navigator.clipboard.writeText(email).then(function() {
