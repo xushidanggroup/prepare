@@ -83,7 +83,7 @@ date: 2023-06-19T12:00:00Z
         transition: transform 0.3s, border 0.3s;
     }
 
-    .thumbnail-container img:hover {
+    .thumbnail-container img:hover, .thumbnail-container.active img {
         transform: scale(1.1);
         border: none;
     }
@@ -92,7 +92,7 @@ date: 2023-06-19T12:00:00Z
         position: absolute;
         top: 0;
         bottom: 0;
-        width: 50px; /* 调整悬停区域宽度 */
+        width: 50px;
         z-index: 1;
     }
 
@@ -148,8 +148,8 @@ date: 2023-06-19T12:00:00Z
                 <img src="/images/龙林毕业聚餐.jpg" alt="Thumbnail 龙林毕业聚餐">
             </div>
         </div>
-        <div class="scroll-zone left" id="scrollLeft" style="height: 100%;"></div>
-        <div class="scroll-zone right" id="scrollRight" style="height: 100%;"></div>
+        <div class="scroll-zone left" id="scrollLeft" style="height: 150px;"></div>
+        <div class="scroll-zone right" id="scrollRight" style="height: 150px;"></div>
     </div>
 </div>
 
@@ -177,6 +177,15 @@ date: 2023-06-19T12:00:00Z
     function showImage(index, quick = false) {
         currentIndex = index;
         const mainImage = document.getElementById('mainImage');
+        const thumbnailContainers = document.querySelectorAll('.thumbnail-container');
+
+        thumbnailContainers.forEach((container, i) => {
+            if (i === index) {
+                container.classList.add('active');
+            } else {
+                container.classList.remove('active');
+            }
+        });
 
         if (quick) {
             mainImage.style.transition = `opacity ${quickTransitionTime}ms ease-in-out`;
