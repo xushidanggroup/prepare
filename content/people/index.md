@@ -92,6 +92,8 @@ sections:
           }
         </script>
         
+        ---
+
         ## Principle Investigator
 
         <div class="container">
@@ -107,6 +109,8 @@ sections:
             </div>
           </div>
         </div>
+
+        ---
 
         ## Graduate Students
 
