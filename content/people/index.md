@@ -93,7 +93,7 @@ sections:
         </script>
         
         <div class="group-photo">
-          <img src="/images/group_photo.jpg" alt="Group Photo">
+          <img src="/images/课题组合照.jpg" alt="Group Photo">
         </div>
 
         ---
