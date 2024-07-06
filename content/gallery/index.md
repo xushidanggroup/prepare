@@ -164,8 +164,10 @@ date: 2023-06-19T12:00:00Z
 
     let currentIndex = 1;
     let autoSwitchInterval;
+    let scrollInterval;
     const transitionTime = 1000; // 1 second
     const quickTransitionTime = 500; // 0.5 second
+    const scrollSpeed = 1; // 调整滚动速度
 
     function showImage(index, quick = false) {
         currentIndex = index;
@@ -206,21 +208,36 @@ date: 2023-06-19T12:00:00Z
         autoSwitchImages();
     }
 
+    function startScrolling(direction) {
+        scrollInterval = setInterval(() => {
+            const thumbnails = document.getElementById('thumbnails');
+            thumbnails.scrollBy({ left: direction * scrollSpeed, behavior: 'smooth' });
+        }, 10); // 控制滚动速度的间隔时间
+    }
+
+    function stopScrolling() {
+        clearInterval(scrollInterval);
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
         autoSwitchImages();
 
         const thumbnails = document.getElementById('thumbnails');
-        const scrollSpeed = 5; // 调整滑动速度
+        const scrollArea = 50; // 悬停触发滚动的区域宽度
 
         thumbnails.addEventListener('mousemove', (e) => {
             const { left, right } = thumbnails.getBoundingClientRect();
             const mouseX = e.clientX - left;
 
-            if (mouseX < 50) { // 靠近左侧50px区域
-                thumbnails.scrollBy({ left: -scrollSpeed, behavior: 'smooth' });
-            } else if (mouseX > right - left - 50) { // 靠近右侧50px区域
-                thumbnails.scrollBy({ left: scrollSpeed, behavior: 'smooth' });
+            if (mouseX < scrollArea) {
+                startScrolling(-1); // 向左滚动
+            } else if (mouseX > right - left - scrollArea) {
+                startScrolling(1); // 向右滚动
+            } else {
+                stopScrolling();
             }
         });
+
+        thumbnails.addEventListener('mouseleave', stopScrolling);
     });
 </script>
