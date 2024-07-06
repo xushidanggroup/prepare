@@ -14,7 +14,7 @@ main:
     url: people
     weight: 30
   - name: Gallery
-    url: allery
+    url: gallery
     weight: 40
   - name: Publications
     url: publication
