@@ -8,10 +8,10 @@ sections:
       title: Principle Investigator
       text: |
         <div style="display: flex; align-items: center; justify-content: flex-start;">
-          <img src="Xu/avatar.jpg" alt="Xu 研究生" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-right: 20px;">
+          <img src="Xu/avatar.jpg" alt="Shidang Xu 许适当" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-right: 20px;">
           <div>
-            <p style="margin: 0; font-size: 14px;">Xu 研究生</p>
-            <p style="margin: 0; font-size: 12px;">Personal information and details about Xu.</p>
+            <p style="margin: 0; font-size: 14px;">Shidang Xu 许适当</p>
+            <p style="margin: 0; font-size: 12px;">Professor in Biomedical Engineering</p>
           </div>
         </div>
   - block: markdown
@@ -26,53 +26,53 @@ sections:
           </div>
           <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
             <img src="JC/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
-            <p style="margin: 0; font-size: 14px;">JC 研究生</p>
-            <p style="margin: 0; font-size: 12px;">Personal information and details about JC.</p>
+            <p style="margin: 0; font-size: 14px;">Jincheng Mo 莫景丞</p>
+            <p style="margin: 0; font-size: 12px;">24 Master’s Student in Pharmacy</p>
           </div>
           <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
             <img src="CC/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
-            <p style="margin: 0; font-size: 14px;">CC 研究生</p>
-            <p style="margin: 0; font-size: 12px;">Personal information and details about CC.</p>
+            <p style="margin: 0; font-size: 14px;">Chenchen Li 李晨晨</p>
+            <p style="margin: 0; font-size: 12px;">23 PhD Student in Biomedical Engineering</p>
           </div>
           <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
             <img src="JD/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
-            <p style="margin: 0; font-size: 14px;">JD 研究生</p>
-            <p style="margin: 0; font-size: 12px;">Personal information and details about JD.</p>
+            <p style="margin: 0; font-size: 14px;">Jinda Yan 闫缙达</p>
+            <p style="margin: 0; font-size: 12px;">24 PhD Student in Materials and Chemical Engineering</p>
           </div>
           <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
             <img src="LP/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
-            <p style="margin: 0; font-size: 14px;">LP 研究生</p>
-            <p style="margin: 0; font-size: 12px;">Personal information and details about LP.</p>
+            <p style="margin: 0; font-size: 14px;">Lipeng Luo 罗丽鹏</p>
+            <p style="margin: 0; font-size: 12px;">24 Master’s Student in Biomedical Engineering</p>
           </div>
           <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
             <img src="MT/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
-            <p style="margin: 0; font-size: 14px;">MT 研究生</p>
-            <p style="margin: 0; font-size: 12px;">Personal information and details about MT.</p>
+            <p style="margin: 0; font-size: 14px;">Meitang Peng 彭美堂</p>
+            <p style="margin: 0; font-size: 12px;">23 Master’s Student in Biomedical Engineering</p>
           </div>
           <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
             <img src="NB/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
-            <p style="margin: 0; font-size: 14px;">NB 研究生</p>
-            <p style="margin: 0; font-size: 12px;">Personal information and details about NB.</p>
+            <p style="margin: 0; font-size: 14px;">Bo Biu 牛博</p>
+            <p style="margin: 0; font-size: 12px;">24 Master’s Student in Pharmacy</p>
           </div>
           <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
             <img src="OY/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
-            <p style="margin: 0; font-size: 14px;">OY 研究生</p>
-            <p style="margin: 0; font-size: 12px;">Personal information and details about OY.</p>
+            <p style="margin: 0; font-size: 14px;">Junchi Ouyang 欧阳骏驰</p>
+            <p style="margin: 0; font-size: 12px;">24 Master’s Student in Biomedical Engineering</p>
           </div>
           <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
             <img src="SC/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
-            <p style="margin: 0; font-size: 14px;">SC 研究生</p>
-            <p style="margin: 0; font-size: 12px;">Personal information and details about SC.</p>
+            <p style="margin: 0; font-size: 14px;">Shicheng Lang 稂世成</p>
+            <p style="margin: 0; font-size: 12px;">24 PhD Student in Biomedical Engineering</p>
           </div>
           <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
             <img src="YH/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
-            <p style="margin: 0; font-size: 14px;">YH 研究生</p>
-            <p style="margin: 0; font-size: 12px;">Personal information and details about YH.</p>
+            <p style="margin: 0; font-size: 14px;">Yinghao Liu 刘英豪</p>
+            <p style="margin: 0; font-size: 12px;">23 Master’s Student in Chemistry</p>
           </div>
           <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
             <img src="YJ/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
-            <p style="margin: 0; font-size: 14px;">YJ 研究生</p>
-            <p style="margin: 0; font-size: 12px;">Personal information and details about YJ.</p>
+            <p style="margin: 0; font-size: 14px;">Yujian Liu 刘宇健</p>
+            <p style="margin: 0; font-size: 12px;">23 Master’s Student in Biomedical Engineering</p>
           </div>
         </div>
   - block: markdown
