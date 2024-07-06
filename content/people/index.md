@@ -30,9 +30,7 @@ sections:
               object-fit: cover;
               border-radius: 50%;
               margin-bottom: 10px;
-              image-rendering: -webkit-optimize-contrast; /* Safari */
-              image-rendering: crisp-edges;
-              image-rendering: pixelated;
+              filter: blur(5px);
           }
           .person p {
             margin: 0;
