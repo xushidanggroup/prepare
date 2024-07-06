@@ -8,13 +8,13 @@ sections:
       title: The Team
       text: |
         <style>
-          .student-container {
+          .container {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            justify-content: flex-start; /* Align items to the start */
+            justify-content: flex-start;
           }
-          .student {
+          .person {
             flex: 1 1 calc(20% - 20px);
             max-width: calc(20% - 20px);
             display: flex;
@@ -23,108 +23,108 @@ sections:
             text-align: center;
             margin-bottom: 20px;
           }
-          .student img {
+          .person img {
             width: 150px;
             height: 150px;
             object-fit: cover;
             border-radius: 50%;
             margin-bottom: 10px;
           }
-          .student p {
+          .person p {
             margin: 0;
           }
-          .student .name {
+          .person .name {
             font-size: 14px;
           }
-          .student .details {
+          .person .details {
             font-size: 12px;
           }
           @media (max-width: 1200px) {
-            .student {
+            .person {
               flex: 1 1 calc(25% - 20px);
               max-width: calc(25% - 20px);
             }
           }
           @media (max-width: 992px) {
-            .student {
+            .person {
               flex: 1 1 calc(33.33% - 20px);
               max-width: calc(33.33% - 20px);
             }
           }
           @media (max-width: 768px) {
-            .student {
+            .person {
               flex: 1 1 calc(50% - 20px);
               max-width: calc(50% - 20px);
             }
           }
           @media (max-width: 576px) {
-            .student {
+            .person {
               flex: 1 1 100%;
               max-width: 100%;
             }
           }
         </style>
         ## Principle Investigator
-        <div class="investigator-container">
-          <div class="investigator">
+        <div class="container">
+          <div class="person">
             <img src="Xu/avatar.jpg" alt="Shidang Xu 许适当">
             <p class="name">Shidang Xu 许适当</p>
             <p class="details">Professor in Biomedical Engineering</p>
           </div>
         </div>
         ## Graduate Students
-        <div class="student-container">
-          <div class="student">
+        <div class="container">
+          <div class="person">
             <img src="Bin/avatar.jpg" alt="Bin Xu">
             <p class="name">Bin Xu 许膑</p>
             <p class="details">23 PhD Student in Biomedical Engineering</p>
           </div>
-          <div class="student">
+          <div class="person">
             <img src="JC/avatar.jpg" alt="Graduate Student">
             <p class="name">Jincheng Mo 莫景丞</p>
             <p class="details">24 Master’s Student in Pharmacy</p>
           </div>
-          <div class="student">
+          <div class="person">
             <img src="CC/avatar.jpg" alt="Graduate Student">
             <p class="name">Chenchen Li 李晨晨</p>
             <p class="details">23 PhD Student in Biomedical Engineering</p>
           </div>
-          <div class="student">
+          <div class="person">
             <img src="JD/avatar.jpg" alt="Graduate Student">
             <p class="name">Jinda Yan 闫缙达</p>
             <p class="details">24 PhD Student in Materials and Chemical Engineering</p>
           </div>
-          <div class="student">
+          <div class="person">
             <img src="LP/avatar.jpg" alt="Graduate Student">
             <p class="name">Lipeng Luo 罗丽鹏</p>
             <p class="details">24 Master’s Student in Biomedical Engineering</p>
           </div>
-          <div class="student">
+          <div class="person">
             <img src="MT/avatar.jpg" alt="Graduate Student">
             <p class="name">Meitang Peng 彭美堂</p>
             <p class="details">23 Master’s Student in Biomedical Engineering</p>
           </div>
-          <div class="student">
+          <div class="person">
             <img src="NB/avatar.jpg" alt="Graduate Student">
             <p class="name">Bo Biu 牛博</p>
             <p class="details">24 Master’s Student in Pharmacy</p>
           </div>
-          <div class="student">
+          <div class="person">
             <img src="OY/avatar.jpg" alt="Graduate Student">
             <p class="name">Junchi Ouyang 欧阳骏驰</p>
             <p class="details">24 Master’s Student in Biomedical Engineering</p>
           </div>
-          <div class="student">
+          <div class="person">
             <img src="SC/avatar.jpg" alt="Graduate Student">
             <p class="name">Shicheng Lang 稂世成</p>
             <p class="details">24 PhD Student in Biomedical Engineering</p>
           </div>
-          <div class="student">
+          <div class="person">
             <img src="YH/avatar.jpg" alt="Graduate Student">
             <p class="name">Yinghao Liu 刘英豪</p>
             <p class="details">23 Master’s Student in Chemistry</p>
           </div>
-          <div class="student">
+          <div class="person">
             <img src="YJ/avatar.jpg" alt="Graduate Student">
             <p class="name">Yujian Liu 刘宇健</p>
             <p class="details">23 Master’s Student in Biomedical Engineering</p>
