@@ -5,50 +5,7 @@ type: landing
 sections:
   - block: markdown
     content:
-      title: Principle Investigator
-      text: |
-        <style>
-          .investigator-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: flex-start;
-          }
-          .investigator {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            margin-bottom: 20px;
-          }
-          .investigator img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 10px;
-          }
-          .investigator p {
-            margin: 0;
-          }
-          .investigator .name {
-            font-size: 14px;
-          }
-          .investigator .details {
-            font-size: 12px;
-          }
-        </style>
-        <div class="investigator-container">
-          <div class="investigator">
-            <img src="Xu/avatar.jpg" alt="Shidang Xu 许适当">
-            <p class="name">Shidang Xu 许适当</p>
-            <p class="details">Professor in Biomedical Engineering</p>
-          </div>
-        </div>
-
-  - block: markdown
-    content:
-      title: Graduate Students
+      title: The Team
       text: |
         <style>
           .student-container {
@@ -107,6 +64,15 @@ sections:
             }
           }
         </style>
+        ## Principle Investigator
+        <div class="investigator-container">
+          <div class="investigator">
+            <img src="Xu/avatar.jpg" alt="Shidang Xu 许适当">
+            <p class="name">Shidang Xu 许适当</p>
+            <p class="details">Professor in Biomedical Engineering</p>
+          </div>
+        </div>
+        ## Graduate Students
         <div class="student-container">
           <div class="student">
             <img src="Bin/avatar.jpg" alt="Bin Xu">
