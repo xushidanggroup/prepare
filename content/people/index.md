@@ -19,10 +19,19 @@ sections:
     content:
       title: Principle Investigator
       text: |
-        <div style="text-align: center;">
-          <img src="Bin/avatar.jpg" alt="Bin Xu" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 10px auto;">
+        <div style="text-align: left;">
+          <img src="Bin/avatar.jpg" alt="Bin Xu" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 10px 0;">
           <p style="margin: 0;">Bin Xu 许膑</p>
           <p style="margin: 0;">23 PhD Student in Biomedical Engineering</p>
+        </div>
+  - block: markdown
+    content:
+      title: Graduate Students
+      text: |
+        <div style="text-align: left;">
+          <img src="Graduate/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 10px 0;">
+          <p style="margin: 0;">JC 研究生</p>
+          <p style="margin: 0;">Personal information and details about Bin Xu.</p>
         </div>
   - block: markdown
     content:
@@ -50,7 +59,6 @@ sections:
             <td style="width: 45%; padding: 8px; vertical-align: middle;"></td>
           </tr>
         </table>
-
   - block: markdown
     content:
       title: Alumni
@@ -97,5 +105,4 @@ sections:
             <td style="width: 45%; padding: 8px; vertical-align: middle;">PhD in Biomedical engineering, University of Texas, Southwestern Medical Center at Dallas (2024)</td>
           </tr>
         </table>
----
 ---
