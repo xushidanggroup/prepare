@@ -93,7 +93,6 @@ date: 2023-06-19T12:00:00Z
         top: 0;
         bottom: 0;
         width: 100px;
-        background-color: rgba(0, 0, 0, 0.1);
         z-index: 1;
     }
 
@@ -106,7 +105,7 @@ date: 2023-06-19T12:00:00Z
     }
 
     .scroll-zone:hover {
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: rgba(0, 0, 0, 0.1);
     }
 </style>
 
@@ -117,7 +116,7 @@ date: 2023-06-19T12:00:00Z
         <button class="gallery-nav right" onclick="showNextImage()">&#10095;</button>
     </div>
     <div class="gallery-thumbnails-container">
-        <div class="scroll-zone left" id="scrollLeft"></div>
+        <div class="scroll-zone left" id="scrollLeft" style="height: 100px;"></div>
         <div class="gallery-thumbnails" id="thumbnails">
             <div class="thumbnail-container" onclick="showImage(0, true)">
                 <img src="/images/清远漂流.jpg" alt="Thumbnail 清远漂流">
@@ -150,7 +149,7 @@ date: 2023-06-19T12:00:00Z
                 <img src="/images/龙林毕业聚餐.jpg" alt="Thumbnail 龙林毕业聚餐">
             </div>
         </div>
-        <div class="scroll-zone right" id="scrollRight"></div>
+        <div class="scroll-zone right" id="scrollRight" style="height: 100px;"></div>
     </div>
 </div>
 
@@ -215,15 +214,14 @@ date: 2023-06-19T12:00:00Z
     }
 
     function startScrolling(direction) {
-        scrollInterval = requestAnimationFrame(function scroll() {
+        scrollInterval = setInterval(() => {
             const thumbnails = document.getElementById('thumbnails');
             thumbnails.scrollBy({ left: direction * scrollSpeed, behavior: 'smooth' });
-            scrollInterval = requestAnimationFrame(scroll);
-        });
+        }, 20);
     }
 
     function stopScrolling() {
-        cancelAnimationFrame(scrollInterval);
+        clearInterval(scrollInterval);
     }
 
     document.addEventListener('DOMContentLoaded', () => {
