@@ -1,6 +1,6 @@
 ---
-title: "JC"
-full_name: "JC 研究生"
-role: "24 Master's Student in Biomedical Engineering"
-groups: ["Graduate Students"]
+title: JC 研究生
+date: 2024-07-03
 ---
+
+Personal information and details about Bin Xu.
