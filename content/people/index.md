@@ -3,26 +3,14 @@ title: People
 date: 2024-07-03
 type: landing
 sections:
-  - block: people
-    content:
-      title: The Team
-      user_groups:
-        - Principle Investigator
-        - Graduate Students
-      sort_by: Params.last_name
-      sort_ascending: true
-      design:
-        show_interests: false
-        show_role: true
-        show_social: true
   - block: markdown
     content:
       title: Principle Investigator
       text: |
-        <div style="text-align: left;">
-          <img src="Xu/avatar.jpg" alt="Graduate Student" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 10px 0;">
-          <p style="margin: 0;">Xu 研究生</p>
-          <p style="margin: 0;">Personal information and details about Xu.</p>
+        <div style="text-align: center;">
+          <img src="Xu/avatar.jpg" alt="Xu 研究生" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
+          <p style="margin: 0; font-size: 14px;">Xu 研究生</p>
+          <p style="margin: 0; font-size: 12px;">Personal information and details about Xu.</p>
         </div>
   - block: markdown
     content:
