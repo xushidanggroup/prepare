@@ -210,14 +210,15 @@ date: 2023-06-19T12:00:00Z
         autoSwitchImages();
 
         const thumbnails = document.getElementById('thumbnails');
-        const scrollSpeed = 10; // 调整滑动速度
+        const scrollSpeed = 5; // 调整滑动速度
 
         thumbnails.addEventListener('mousemove', (e) => {
             const { left, right } = thumbnails.getBoundingClientRect();
+            const mouseX = e.clientX - left;
 
-            if (e.clientX < left + 100) { // 靠近左侧100px区域
+            if (mouseX < 50) { // 靠近左侧50px区域
                 thumbnails.scrollBy({ left: -scrollSpeed, behavior: 'smooth' });
-            } else if (e.clientX > right - 100) { // 靠近右侧100px区域
+            } else if (mouseX > right - left - 50) { // 靠近右侧50px区域
                 thumbnails.scrollBy({ left: scrollSpeed, behavior: 'smooth' });
             }
         });
