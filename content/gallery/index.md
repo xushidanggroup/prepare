@@ -85,26 +85,26 @@ date: 2023-06-19T12:00:00Z
         border: none;
     }
 
-    .scroll-button {
+    .scroll-zone {
         position: absolute;
         top: 0;
         bottom: 0;
-        width: 50px;
-        background-color: rgba(0, 0, 0, 0.5);
+        width: 100px;
+        background-color: rgba(0, 0, 0, 0.1);
         cursor: pointer;
         z-index: 1;
     }
 
-    .scroll-button.left {
+    .scroll-zone.left {
         left: 0;
     }
 
-    .scroll-button.right {
+    .scroll-zone.right {
         right: 0;
     }
 
-    .scroll-button:hover {
-        background-color: rgba(0, 0, 0, 0.7);
+    .scroll-zone:hover {
+        background-color: rgba(0, 0, 0, 0.2);
     }
 </style>
 
@@ -115,8 +115,7 @@ date: 2023-06-19T12:00:00Z
         <button class="gallery-nav right" onclick="showNextImage()">&#10095;</button>
     </div>
     <div class="gallery-thumbnails" id="thumbnails">
-        <div class="scroll-button left" id="scrollLeft"></div>
-        <div class="scroll-button right" id="scrollRight"></div>
+        <div class="scroll-zone left" id="scrollLeft"></div>
         <div class="thumbnail-container" onclick="showImage(0, true)">
             <img src="/images/清远漂流.jpg" alt="Thumbnail 清远漂流">
         </div>
@@ -147,6 +146,7 @@ date: 2023-06-19T12:00:00Z
         <div class="thumbnail-container" onclick="showImage(9, true)">
             <img src="/images/龙林毕业聚餐.jpg" alt="Thumbnail 龙林毕业聚餐">
         </div>
+        <div class="scroll-zone right" id="scrollRight"></div>
     </div>
 </div>
 
@@ -169,7 +169,7 @@ date: 2023-06-19T12:00:00Z
     let scrollInterval;
     const transitionTime = 1000; // 1 second
     const quickTransitionTime = 500; // 0.5 second
-    const scrollSpeed = 1; // 调整滚动速度
+    const scrollSpeed = 2; // 调整滚动速度
 
     function showImage(index, quick = false) {
         currentIndex = index;
