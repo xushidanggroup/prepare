@@ -56,7 +56,7 @@ date: 2023-06-19T12:00:00Z
         display: flex;
         justify-content: start;
         gap: 10px;
-        overflow-x: hidden; /* 不显示滚动条 */
+        overflow-x: hidden;
         white-space: nowrap;
         width: 100%;
         padding: 1px;
@@ -91,7 +91,6 @@ date: 2023-06-19T12:00:00Z
         bottom: 0;
         width: 100px;
         background-color: rgba(0, 0, 0, 0.1);
-        cursor: pointer;
         z-index: 1;
     }
 
@@ -167,9 +166,9 @@ date: 2023-06-19T12:00:00Z
     let currentIndex = 1;
     let autoSwitchInterval;
     let scrollInterval;
-    const transitionTime = 1000; // 1 second
-    const quickTransitionTime = 500; // 0.5 second
-    const scrollSpeed = 2; // 调整滚动速度
+    const transitionTime = 1000;
+    const quickTransitionTime = 500;
+    const scrollSpeed = 2;
 
     function showImage(index, quick = false) {
         currentIndex = index;
@@ -202,7 +201,7 @@ date: 2023-06-19T12:00:00Z
     }
 
     function autoSwitchImages() {
-        autoSwitchInterval = setInterval(showNextImage, 5000); // 5 seconds
+        autoSwitchInterval = setInterval(showNextImage, 5000);
     }
 
     function resetAutoSwitch() {
@@ -211,25 +210,26 @@ date: 2023-06-19T12:00:00Z
     }
 
     function startScrolling(direction) {
-        scrollInterval = setInterval(() => {
+        scrollInterval = requestAnimationFrame(function scroll() {
             const thumbnails = document.getElementById('thumbnails');
             thumbnails.scrollBy({ left: direction * scrollSpeed, behavior: 'smooth' });
-        }, 10); // 控制滚动速度的间隔时间
+            scrollInterval = requestAnimationFrame(scroll);
+        });
     }
 
     function stopScrolling() {
-        clearInterval(scrollInterval);
+        cancelAnimationFrame(scrollInterval);
     }
 
     document.addEventListener('DOMContentLoaded', () => {
         autoSwitchImages();
 
-        const scrollLeftButton = document.getElementById('scrollLeft');
-        const scrollRightButton = document.getElementById('scrollRight');
+        const scrollLeftZone = document.getElementById('scrollLeft');
+        const scrollRightZone = document.getElementById('scrollRight');
 
-        scrollLeftButton.addEventListener('mouseenter', () => startScrolling(-1));
-        scrollLeftButton.addEventListener('mouseleave', stopScrolling);
-        scrollRightButton.addEventListener('mouseenter', () => startScrolling(1));
-        scrollRightButton.addEventListener('mouseleave', stopScrolling);
+        scrollLeftZone.addEventListener('mouseenter', () => startScrolling(-1));
+        scrollLeftZone.addEventListener('mouseleave', stopScrolling);
+        scrollRightZone.addEventListener('mouseenter', () => startScrolling(1));
+        scrollRightZone.addEventListener('mouseleave', stopScrolling);
     });
 </script>
