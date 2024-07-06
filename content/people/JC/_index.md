@@ -1,9 +1,6 @@
 ---
-title: JC 研究生
-date: 2024-07-03
-type: person
-groups:
-  - Graduate Students
-avatar: avatar.jpg
-role: 研究生
+title: "JC"
+full_name: "JC 研究生"
+role: "24 Master's Student in Biomedical Engineering"
+groups: ["Graduate Students"]
 ---
