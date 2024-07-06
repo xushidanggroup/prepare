@@ -7,6 +7,7 @@ sections:
     content:
       title: The Team
       text: |
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <style>
           .container {
             display: flex;
@@ -39,6 +40,23 @@ sections:
           .person .details {
             font-size: 12px;
           }
+          .person .email {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 5px;
+            cursor: pointer;
+          }
+          .person .email .fa-envelope {
+            margin-right: 5px;
+          }
+          .person .email span {
+            display: none;
+            font-size: 12px;
+          }
+          .person .email:hover span {
+            display: inline;
+          }
           @media (max-width: 1200px) {
             .person {
               flex: 1 1 calc(25% - 20px);
@@ -64,7 +82,15 @@ sections:
             }
           }
         </style>
-
+        <script>
+          function copyToClipboard(email) {
+            navigator.clipboard.writeText(email).then(function() {
+              alert('Email copied to clipboard: ' + email);
+            }, function(err) {
+              console.error('Could not copy text: ', err);
+            });
+          }
+        </script>
         ## Principle Investigator
 
         <div class="container">
@@ -72,6 +98,9 @@ sections:
             <img src="Xu/avatar.jpg" alt="Shidang Xu 许适当">
             <p class="name">Shidang Xu 许适当</p>
             <p class="details">Professor in Biomedical Engineering</p>
+            <div class="email" onclick="copyToClipboard('shidang.xu@example.com')">
+              <i class="fas fa-envelope"></i><span>shidang.xu@example.com</span>
+            </div>
           </div>
         </div>
 
@@ -82,56 +111,89 @@ sections:
             <img src="Bin/avatar.jpg" alt="Bin Xu">
             <p class="name">Bin Xu 许膑</p>
             <p class="details">23 PhD Student in Biomedical Engineering</p>
+            <div class="email" onclick="copyToClipboard('bin.xu@example.com')">
+              <i class="fas fa-envelope"></i><span>bin.xu@example.com</span>
+            </div>
           </div>
           <div class="person">
             <img src="JC/avatar.jpg" alt="Graduate Student">
             <p class="name">Jincheng Mo 莫景丞</p>
             <p class="details">24 Master’s Student in Pharmacy</p>
+            <div class="email" onclick="copyToClipboard('jincheng.mo@example.com')">
+              <i class="fas fa-envelope"></i><span>jincheng.mo@example.com</span>
+            </div>
           </div>
           <div class="person">
             <img src="CC/avatar.jpg" alt="Graduate Student">
             <p class="name">Chenchen Li 李晨晨</p>
             <p class="details">23 PhD Student in Biomedical Engineering</p>
+            <div class="email" onclick="copyToClipboard('chenchen.li@example.com')">
+              <i class="fas fa-envelope"></i><span>chenchen.li@example.com</span>
+            </div>
           </div>
           <div class="person">
             <img src="JD/avatar.jpg" alt="Graduate Student">
             <p class="name">Jinda Yan 闫缙达</p>
             <p class="details">24 PhD Student in Materials and Chemical Engineering</p>
+            <div class="email" onclick="copyToClipboard('jinda.yan@example.com')">
+              <i class="fas fa-envelope"></i><span>jinda.yan@example.com</span>
+            </div>
           </div>
           <div class="person">
             <img src="LP/avatar.jpg" alt="Graduate Student">
             <p class="name">Lipeng Luo 罗丽鹏</p>
             <p class="details">24 Master’s Student in Biomedical Engineering</p>
+            <div class="email" onclick="copyToClipboard('lipeng.luo@example.com')">
+              <i class="fas fa-envelope"></i><span>lipeng.luo@example.com</span>
+            </div>
           </div>
           <div class="person">
             <img src="MT/avatar.jpg" alt="Graduate Student">
             <p class="name">Meitang Peng 彭美堂</p>
             <p class="details">23 Master’s Student in Biomedical Engineering</p>
+            <div class="email" onclick="copyToClipboard('meitang.peng@example.com')">
+              <i class="fas fa-envelope"></i><span>meitang.peng@example.com</span>
+            </div>
           </div>
           <div class="person">
             <img src="NB/avatar.jpg" alt="Graduate Student">
             <p class="name">Bo Biu 牛博</p>
             <p class="details">24 Master’s Student in Pharmacy</p>
+            <div class="email" onclick="copyToClipboard('bo.biu@example.com')">
+              <i class="fas fa-envelope"></i><span>bo.biu@example.com</span>
+            </div>
           </div>
           <div class="person">
             <img src="OY/avatar.jpg" alt="Graduate Student">
             <p class="name">Junchi Ouyang 欧阳骏驰</p>
             <p class="details">24 Master’s Student in Biomedical Engineering</p>
+            <div class="email" onclick="copyToClipboard('junchi.ouyang@example.com')">
+              <i class="fas fa-envelope"></i><span>junchi.ouyang@example.com</span>
+            </div>
           </div>
           <div class="person">
             <img src="SC/avatar.jpg" alt="Graduate Student">
             <p class="name">Shicheng Lang 稂世成</p>
             <p class="details">24 PhD Student in Biomedical Engineering</p>
+            <div class="email" onclick="copyToClipboard('shicheng.lang@example.com')">
+              <i class="fas fa-envelope"></i><span>shicheng.lang@example.com</span>
+            </div>
           </div>
           <div class="person">
             <img src="YH/avatar.jpg" alt="Graduate Student">
             <p class="name">Yinghao Liu 刘英豪</p>
             <p class="details">23 Master’s Student in Chemistry</p>
+            <div class="email" onclick="copyToClipboard('yinghao.liu@example.com')">
+              <i class="fas fa-envelope"></i><span>yinghao.liu@example.com</span>
+            </div>
           </div>
           <div class="person">
             <img src="YJ/avatar.jpg" alt="Graduate Student">
             <p class="name">Yujian Liu 刘宇健</p>
             <p class="details">23 Master’s Student in Biomedical Engineering</p>
+            <div class="email" onclick="copyToClipboard('yujian.liu@example.com')">
+              <i class="fas fa-envelope"></i><span>yujian.liu@example.com</span>
+            </div>
           </div>
         </div>
 
