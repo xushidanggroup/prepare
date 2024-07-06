@@ -30,7 +30,7 @@ sections:
               object-fit: cover;
               border-radius: 50%;
               margin-bottom: 10px;
-              filter: blur(0.1px);
+              filter: blur(0.5px);
           }
           .person p {
             margin: 0;
