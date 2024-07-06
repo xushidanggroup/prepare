@@ -26,16 +26,12 @@ sections:
     content:
       title: Graduate Students
       text: |
-        ![Ruoqi Chen](Bin/avatar.jpg)
         Ruoqi Chen 陈若琪
         PhD Student in Biomedical Engineering at SCUT (2021)
-        ![Xinjie Shen](Bin/avatar.jpg)
         Xinjie Shen 沈鑫杰
         PhD Student in Artificial Intelligence at SCUT (2021)
-        ![Qingquan Wang](Bin/avatar.jpg)
         Qingquan Wang 王庆全
         PhD Student in Biomedical Engineering at SCUT (2022)
-        ![Yutong Wang](Bin/avatar.jpg)
         Yutong Wang 王雨桐
         PhD Student in Biomedical Engineering at SCUT (2022)
 ---
