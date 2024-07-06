@@ -56,7 +56,7 @@ date: 2023-06-19T12:00:00Z
         display: flex;
         justify-content: start;
         gap: 10px;
-        overflow-x: auto;
+        overflow-x: hidden; /* 不显示滚动条 */
         white-space: nowrap;
         width: 100%;
         padding: 1px;
@@ -114,7 +114,7 @@ date: 2023-06-19T12:00:00Z
         <img src="/images/冬至.jpg" alt="Main Image" id="mainImage">
         <button class="gallery-nav right" onclick="showNextImage()">&#10095;</button>
     </div>
-    <div class="gallery-thumbnails">
+    <div class="gallery-thumbnails" id="thumbnails">
         <div class="thumbnail-container" onclick="showImage(0, true)">
             <img src="/images/清远漂流.jpg" alt="Thumbnail 清远漂流">
         </div>
@@ -209,11 +209,11 @@ date: 2023-06-19T12:00:00Z
     document.addEventListener('DOMContentLoaded', () => {
         autoSwitchImages();
 
-        const thumbnails = document.querySelector('.gallery-thumbnails');
-        
+        const thumbnails = document.getElementById('thumbnails');
+        const scrollSpeed = 2; // 调整滑动速度
+
         thumbnails.addEventListener('mousemove', (e) => {
             const { left, right } = thumbnails.getBoundingClientRect();
-            const scrollSpeed = 2; // 调整滑动速度
 
             if (e.clientX < left + 100) { // 靠近左侧100px区域
                 thumbnails.scrollBy({ left: -scrollSpeed, behavior: 'smooth' });
