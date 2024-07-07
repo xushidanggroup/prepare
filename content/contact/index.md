@@ -36,5 +36,5 @@ date: 2024-07-07
 </div>
 
 <div style="margin-top: 20px; text-align: center;">
-    <img src="images/校区照片.jpg" alt="校区照片" style="max-width: 100%; height: auto;">
+    <img src="images/校区地图.jpg" alt="校区地图" style="max-width: 100%; height: auto;">
 </div>
