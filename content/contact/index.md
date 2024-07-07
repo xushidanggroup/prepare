@@ -44,5 +44,5 @@ date: 2024-07-07
 </div>
 
 <div class="campus-image">
-    <img src="./校区照片.jpg" alt="校区照片">
+    <img src="./图书馆鸟瞰.jpg" alt="图书馆鸟瞰">
 </div>
