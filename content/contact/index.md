@@ -14,16 +14,11 @@ date: 2024-07-07
 }
 .contact-map {
     max-width: 50%;
-    position: relative;
 }
 .contact-map iframe {
     width: 100%;
     height: 300px; /* 调整高度以使地图底端与文本底端对齐 */
     border: 0;
-    pointer-events: none; /* 禁用默认的鼠标事件 */
-}
-.contact-map:hover iframe {
-    pointer-events: auto; /* 启用鼠标事件 */
 }
 </style>
 
