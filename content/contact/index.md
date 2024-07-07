@@ -19,6 +19,13 @@ date: 2024-07-07
     height: 300px; /* Adjust height as needed */
     border: 0;
 }
+.campus-image {
+    text-align: center;
+}
+.campus-image img {
+    width: 100%;
+    height: auto;
+}
 @media(min-width: 768px) {
     .contact-container {
         flex-direction: row;
@@ -31,13 +38,6 @@ date: 2024-07-07
     .contact-map {
         max-width: 50%;
     }
-}
-.fullscreen {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background: url('图书馆鸟瞰.jpg') no-repeat center center;
-    background-size: cover;
 }
 </style>
 
@@ -54,6 +54,6 @@ date: 2024-07-07
     </div>
 </div>
 
-<div class="fullscreen">
-    <!-- Fullscreen image as background, no additional content needed -->
+<div class="campus-image">
+    <img src="./图书馆鸟瞰.png" alt="图书馆鸟瞰">
 </div>
