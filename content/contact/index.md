@@ -36,5 +36,5 @@ date: 2024-07-07
 </div>
 
 <div style="margin-top: 20px; text-align: center;">
-    <img src="images/冬至.jpg" alt="冬至" style="max-width: 100%; height: auto;">
+    <img src="images/毕业典礼合照.jpg" alt="毕业典礼合照" style="max-width: 100%; height: auto;">
 </div>
