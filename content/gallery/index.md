@@ -15,15 +15,32 @@ date: 2023-06-19T12:00:00Z
         align-items: center;
     }
 
+    .gallery-main {
+        width: 100%;
+        max-width: 90vw;
+        text-align: center;
+        position: relative;
+        margin-bottom: 1px; /* Adjusted margin here */
+    }
+
+    .gallery-main img {
+        max-width: 100%;
+        max-height: 100vh;
+        height: auto;
+        border: none;
+        transition: opacity 1s ease-in-out;
+    }
+
     .gallery-thumbnails {
         display: flex;
-        justify-content: start; /* 修改为start以确保从头开始排列 */
+        justify-content: start;
         gap: 10px;
         overflow-x: auto;
         white-space: nowrap;
         width: 100%;
         padding: 1px;
-        box-sizing: border-box; /* 确保padding和内容一起计算宽度 */
+        box-sizing: border-box;
+        margin-bottom: 1px; /* Adjusted margin here */
     }
 
     .thumbnail-container {
@@ -45,43 +62,6 @@ date: 2023-06-19T12:00:00Z
     .thumbnail-container img:hover {
         transform: scale(1.1);
         border: none;
-    }
-
-    .gallery-main {
-        width: 100%;
-        max-width: 90vw;
-        text-align: center;
-        position: relative;
-        margin-top: 1px;
-    }
-
-    .gallery-main img {
-        max-width: 100%;
-        max-height: 100vh;
-        height: auto;
-        border: none;
-        transition: opacity 1s ease-in-out;
-    }
-
-    .gallery-nav {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        border: none;
-        font-size: 2em;
-        padding: 5px;
-        cursor: pointer;
-        z-index: 1;
-    }
-
-    .gallery-nav.left {
-        left: 5px;
-    }
-
-    .gallery-nav.right {
-        right: 5px;
     }
 
     .gallery-thumbnails::-webkit-scrollbar {
