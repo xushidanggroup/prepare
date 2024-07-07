@@ -4,6 +4,34 @@ date: 2024-07-07
 ---
 
 <style>
+.navbar {
+    position: fixed; /* 或者 relative，根据你的需求 */
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-menu li {
+    display: inline;
+}
+
+.navbar-menu a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #333;
+}
+
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
