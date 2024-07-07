@@ -39,14 +39,6 @@ date: 2024-07-07
     background: url('图书馆鸟瞰.jpg') no-repeat center center;
     background-size: cover;
 }
-.fullscreen-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-}
 </style>
 
 <div class="contact-container">
@@ -63,7 +55,5 @@ date: 2024-07-07
 </div>
 
 <div class="fullscreen">
-    <div class="fullscreen-text">
-        <!-- Add any text or additional content you want to display over the fullscreen image here -->
-    </div>
+    <!-- Fullscreen image as background, no additional content needed -->
 </div>
