@@ -46,12 +46,12 @@ date: 2024-07-07
         <p><strong><a href="https://calendly.com/xushidang" target="_blank">Book an appointment</a></strong></p>
     </div>
     <div class="contact-map">
-        <img src="/images/石门1.jpg" alt="Map" id="mapImage">
+        <img src="/images/校区地图.jpg" alt="Map" id="mapImage">
     </div>
 </div>
 
 <div class="additional-image">
-    <img src="/images/石门2.jpg" alt="SCUT">
+    <img src="/images/校区照片.jpg" alt="SCUT">
 </div>
 
 <script>
