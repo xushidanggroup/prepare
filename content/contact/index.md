@@ -32,6 +32,21 @@ date: 2024-07-07
         max-width: 50%;
     }
 }
+.fullscreen {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('/path/to/contact.jpg') no-repeat center center;
+    background-size: cover;
+}
+.fullscreen-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
 </style>
 
 <div class="contact-container">
@@ -47,23 +62,8 @@ date: 2024-07-07
     </div>
 </div>
 
-<!-- Add a fullscreen image block -->
-- block: markdown
-  content:
-    title:
-    subtitle: ''
-    text:
-  design:
-    columns: '1'
-    background:
-      image: 
-        filename: contact.jpg
-        filters:
-          brightness: 1
-        parallax: false
-        position: center
-        size: cover
-        text_color_light: true
-    spacing:
-      padding: ['20px', '0', '20px', '0']
-    css_class: fullscreen
+<div class="fullscreen">
+    <div class="fullscreen-text">
+        <!-- Add any text or additional content you want to display over the fullscreen image here -->
+    </div>
+</div>
