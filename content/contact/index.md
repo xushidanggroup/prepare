@@ -39,7 +39,8 @@ sections:
     content:
       title:
       subtitle: ''
-      text: ![Map](Map.jpg)
+      text: 
+        ![Map](images/Map.jpg)
     design:
       columns: '1'
       spacing:
@@ -49,7 +50,8 @@ sections:
     content:
       title:
       subtitle: ''
-      text: ![SCUT](SCUT.jpg)
+      text: 
+        ![SCUT](images/SCUT.jpg)
     design:
       columns: '1'
       spacing:
