@@ -9,6 +9,7 @@ body {
     padding: 20px;
     box-sizing: border-box;
     width: 100%;
+    max-width: 100%;
 }
 .contact-container {
     display: flex;
@@ -20,6 +21,7 @@ body {
 .contact-details, .contact-map {
     flex: 1 1 45%; /* Flex-grow, flex-shrink, and flex-basis */
     margin: 10px;
+    box-sizing: border-box;
 }
 .contact-map iframe {
     width: 100%;
