@@ -4,29 +4,41 @@ date: 2024-07-07
 ---
 
 <style>
+body {
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+}
 .contact-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
+    width: 100%;
 }
-.contact-details {
-    max-width: 45%;
-}
-.contact-map {
-    max-width: 50%;
+.contact-details, .contact-map {
+    flex: 1 1 45%; /* Flex-grow, flex-shrink, and flex-basis */
+    margin: 10px;
 }
 .contact-map iframe {
     width: 100%;
-    height: 300px; /* Adjust height to align the bottom of the map with the bottom of the text */
+    height: 300px; /* Adjust height as necessary */
     border: 0;
 }
 .campus-image {
     margin-top: 20px;
     text-align: center;
+    width: 100%;
 }
 .campus-image img {
     width: 100%;
     height: auto;
+}
+@media (max-width: 768px) {
+    .contact-details, .contact-map {
+        flex: 1 1 100%; /* Make elements stack vertically on smaller screens */
+    }
 }
 </style>
 
