@@ -20,18 +20,11 @@ date: 2024-07-07
     border: 0;
 }
 .campus-image {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+    text-align: center;
 }
 .campus-image img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
     width: 100%;
     height: auto;
-    transform: translate(-50%, -50%);
 }
 @media(min-width: 768px) {
     .contact-container {
