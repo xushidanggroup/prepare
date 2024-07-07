@@ -19,13 +19,6 @@ date: 2024-07-07
     height: 300px; /* Adjust height as needed */
     border: 0;
 }
-.campus-image {
-    text-align: center;
-}
-.campus-image img {
-    width: 100%;
-    height: auto;
-}
 @media(min-width: 768px) {
     .contact-container {
         flex-direction: row;
@@ -54,6 +47,23 @@ date: 2024-07-07
     </div>
 </div>
 
-<div class="campus-image">
-    <img src="./图书馆鸟瞰.png" alt="图书馆鸟瞰">
-</div>
+<!-- Add a fullscreen image block -->
+- block: markdown
+  content:
+    title:
+    subtitle: ''
+    text:
+  design:
+    columns: '1'
+    background:
+      image: 
+        filename: contact.jpg
+        filters:
+          brightness: 1
+        parallax: false
+        position: center
+        size: cover
+        text_color_light: true
+    spacing:
+      padding: ['20px', '0', '20px', '0']
+    css_class: fullscreen
