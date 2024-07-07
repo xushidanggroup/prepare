@@ -39,39 +39,19 @@ sections:
     content:
       title:
       subtitle: ''
-      text:
+      text: ![Map](Map.jpg)
     design:
       columns: '1'
-      background:
-        image: 
-          filename: Map.jpg
-          filters:
-            brightness: 1
-          parallax: false
-          position: center
-          size: cover
-          text_color_light: true
       spacing:
         padding: ['20px', '0', '20px', '0']
-      css_class: regular
 
   - block: markdown
     content:
       title:
       subtitle: ''
-      text:
+      text: ![SCUT](SCUT.jpg)
     design:
       columns: '1'
-      background:
-        image: 
-          filename: SCUT.jpg
-          filters:
-            brightness: 1
-          parallax: false
-          position: center
-          size: cover
-          text_color_light: true
       spacing:
         padding: ['20px', '0', '20px', '0']
-      css_class: regular
 ---
