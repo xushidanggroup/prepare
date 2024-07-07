@@ -36,7 +36,7 @@ date: 2024-07-07
     position: relative;
     width: 100%;
     height: 100vh;
-    background: url('/path/to/contact.jpg') no-repeat center center;
+    background: url('contact.jpg') no-repeat center center;
     background-size: cover;
 }
 .fullscreen-text {
