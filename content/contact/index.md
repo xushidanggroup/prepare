@@ -45,6 +45,6 @@ date: 2024-07-07
 </div>
 
 <div class="additional-image">
-    <img src="/images/校区地图.jpg" alt="Campus Map">
-    <img src="/images/校区照片.jpg" alt="Campus Photo">
+    <img src="https://xushidanggroup.github.io/contact/images/校区地图.jpg" alt="Campus Map">
+    <img src="https://xushidanggroup.github.io/contact/images/校区照片.jpg" alt="Campus Photo">
 </div>
