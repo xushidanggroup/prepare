@@ -25,35 +25,44 @@ sections:
         - 'Wednesday 09:00 to 10:00'
       appointment_url: 'https://calendly.com/xushidang'
       autolink: true
-    
-      form:
-        provider: netlify
-        formspree:
-          id:
-        netlify:
-          captcha: false
     design:
       columns: '1'
 
   - block: markdown
     content:
-      title:
-      subtitle: ''
-      text: 
-        ![Map](images/Map.jpg)
+      title: Map
+      text: ![Map](Map.jpg)
     design:
       columns: '1'
+      background:
+        image:
+          filename: Map.jpg
+          alt: Map
+          filters:
+            brightness: 1
+          parallax: false
+          position: center
+          size: contain
+          text_color_light: true
       spacing:
         padding: ['20px', '0', '20px', '0']
 
   - block: markdown
     content:
-      title:
-      subtitle: ''
-      text: 
-        ![SCUT](images/SCUT.jpg)
+      title: South China University of Technology
+      text: ![SCUT](SCUT.jpg)
     design:
       columns: '1'
+      background:
+        image:
+          filename: SCUT.jpg
+          alt: SCUT
+          filters:
+            brightness: 1
+          parallax: false
+          position: center
+          size: contain
+          text_color_light: true
       spacing:
         padding: ['20px', '0', '20px', '0']
 ---
