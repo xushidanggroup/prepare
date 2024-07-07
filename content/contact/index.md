@@ -36,7 +36,7 @@ date: 2024-07-07
     position: relative;
     width: 100%;
     height: 100vh;
-    background: url('contact.jpg') no-repeat center center;
+    background: url('图书馆鸟瞰.jpg') no-repeat center center;
     background-size: cover;
 }
 .fullscreen-text {
