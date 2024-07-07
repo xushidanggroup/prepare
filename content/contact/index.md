@@ -22,6 +22,24 @@ date: 2024-07-07
 }
 </style>
 
+<script>
+function enableMapScroll() {
+    var mapFrame = document.querySelector('.contact-map iframe');
+    mapFrame.src = mapFrame.src + "&zoom=15"; // 重新加载iframe以启用滚轮缩放
+}
+
+function disableMapScroll() {
+    var mapFrame = document.querySelector('.contact-map iframe');
+    mapFrame.src = mapFrame.src.replace("&zoom=15", ""); // 重新加载iframe以禁用滚轮缩放
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    var mapContainer = document.querySelector('.contact-map');
+    mapContainer.addEventListener('mouseenter', enableMapScroll);
+    mapContainer.addEventListener('mouseleave', disableMapScroll);
+});
+</script>
+
 <div class="contact-container">
     <div class="contact-details">
         <p><strong>Primary contact:</strong> Shidang Xu</p>
