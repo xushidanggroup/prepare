@@ -14,10 +14,18 @@ date: 2024-07-07
 }
 .contact-map {
     max-width: 50%;
+    overflow: hidden; /* Ensure overflow is hidden for zoom effect */
+    position: relative;
 }
 .contact-map img {
     width: 100%;
     height: auto;
+    transition: transform 0.25s ease; /* Smooth zoom transition */
+    cursor: zoom-in; /* Change cursor on hover */
+}
+.contact-map img.zoomed {
+    transform: scale(2); /* Scale image to 2x on click */
+    cursor: zoom-out; /* Change cursor on zoomed state */
 }
 .additional-image {
     margin-top: 20px;
@@ -38,10 +46,16 @@ date: 2024-07-07
         <p><strong><a href="https://calendly.com/xushidang" target="_blank">Book an appointment</a></strong></p>
     </div>
     <div class="contact-map">
-        <img src="/images/Map.jpg" alt="Map">
+        <img src="/images/Map.jpg" alt="Map" id="mapImage">
     </div>
 </div>
 
 <div class="additional-image">
     <img src="/images/SCUT.jpg" alt="SCUT">
 </div>
+
+<script>
+document.getElementById('mapImage').addEventListener('click', function() {
+    this.classList.toggle('zoomed');
+});
+</script>
