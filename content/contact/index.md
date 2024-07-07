@@ -17,7 +17,7 @@ date: 2024-07-07
 }
 .contact-map iframe {
     width: 100%;
-    height: 300px; /* 调整高度以使地图底端与文本底端对齐 */
+    height: 300px; /* Adjust height to align the bottom of the map with the bottom of the text */
     border: 0;
 }
 .campus-image {
@@ -25,17 +25,8 @@ date: 2024-07-07
     text-align: center;
 }
 .campus-image img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
-    margin-bottom: 20px; /* 添加底部间距以分隔两张图片 */
-}
-.full-width-image {
-    width: 100vw; /* 让图片撑满全屏宽度 */
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
 }
 </style>
 
@@ -46,6 +37,7 @@ date: 2024-07-07
         <p><strong>Phone:</strong> 13717051839</p>
         <p><strong>Address:</strong> No. 777, Xingye Avenue, Guangzhou, 510006</p>
         <p><strong><a href="https://calendly.com/xushidang" target="_blank">Book an appointment</a></strong></p>
+        <p><strong><a href="https://map.scut.edu.cn/login_home.html" target="_blank">SCUT Interactive Map</a></strong></p>
     </div>
     <div class="contact-map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.938297122623!2d113.4086811!3d23.0101661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403abfa009032d7%3A0xc48aa276ff6bccb0!2z5Lit5Zu95a2m5ZyL5ZOB5biC5bel5YWt5ZOB5qWa6YOo5ZyS!5e0!3m2!1szh-CN!2sus!4v1625240411027!5m2!1szh-CN!2sus" allowfullscreen="" loading="lazy"></iframe>
@@ -54,8 +46,5 @@ date: 2024-07-07
 
 <div class="campus-image">
     <img src="./校区地图.jpg" alt="校区地图">
-</div>
-
-<div class="full-width-image">
     <img src="./校区照片.jpg" alt="校区照片">
 </div>
