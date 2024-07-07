@@ -29,6 +29,15 @@ date: 2024-07-07
     height: auto;
     margin-bottom: 20px; /* 添加底部间距以分隔两张图片 */
 }
+.wide-image-container {
+    margin-top: 20px;
+    text-align: center;
+    overflow-x: auto; /* 允许横向滚动 */
+}
+.wide-image-container img {
+    width: 100%; /* 让图片占满容器宽度 */
+    height: auto;
+}
 </style>
 
 <div class="contact-container">
@@ -46,5 +55,8 @@ date: 2024-07-07
 
 <div class="campus-image">
     <img src="./校区地图.jpg" alt="校区地图">
+</div>
+
+<div class="wide-image-container">
     <img src="./校区照片.jpg" alt="校区照片">
 </div>
