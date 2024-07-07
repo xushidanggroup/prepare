@@ -27,6 +27,7 @@ date: 2024-07-07
 .campus-image img {
     max-width: 100%;
     height: auto;
+    margin-bottom: 20px; /* 添加底部间距以分隔两张图片 */
 }
 </style>
 
@@ -44,5 +45,6 @@ date: 2024-07-07
 </div>
 
 <div class="campus-image">
-    <img src="/images/校区照片.jpg" alt="校区照片">
+    <img src="./校区地图.jpg" alt="校区地图">
+    <img src="./校区照片.jpg" alt="校区照片">
 </div>
