@@ -1,15 +1,13 @@
 ---
 title: Contact
 date: 2024-06-04
-
 type: landing
-
 sections:
   - block: contact
     content:
-      title: Contact
+      title: Contact Us
       text: |-
-        Join Our Research Group
+        We welcome you to join our research group or reach out for any inquiries.
       address:
         street: No. 777, Xingye Avenue
         city: Guangzhou
@@ -27,42 +25,46 @@ sections:
       autolink: true
     design:
       columns: '1'
-
+    
   - block: markdown
     content:
-      title: Map
-      text: ![Map](Map.jpg)
+      title: How to Find Us
+      subtitle: ''
+      text: |
+        ![Map to Our Lab](images/Map.jpg)
     design:
       columns: '1'
       background:
-        image:
-          filename: Map.jpg
-          alt: Map
+        image: 
+          filename: images/Map.jpg
+          alt: Map to Our Lab
           filters:
             brightness: 1
           parallax: false
           position: center
-          size: contain
-          text_color_light: true
+          size: cover
+          text_color_light: false
       spacing:
         padding: ['20px', '0', '20px', '0']
-
+  
   - block: markdown
     content:
       title: South China University of Technology
-      text: ![SCUT](SCUT.jpg)
+      subtitle: ''
+      text: |
+        ![South China University of Technology](images/SCUT.jpg)
     design:
       columns: '1'
       background:
-        image:
-          filename: SCUT.jpg
-          alt: SCUT
+        image: 
+          filename: images/SCUT.jpg
+          alt: South China University of Technology
           filters:
             brightness: 1
           parallax: false
           position: center
-          size: contain
-          text_color_light: true
+          size: cover
+          text_color_light: false
       spacing:
         padding: ['20px', '0', '20px', '0']
 ---
