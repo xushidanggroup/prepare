@@ -51,7 +51,7 @@ date: 2024-07-07
 </div>
 
 <div class="additional-image">
-    <img src="/images/校区照片.jpg" alt="SCUT">
+    <img src="/images/校区地图.jpg" alt="SCUT">
 </div>
 
 <script>
