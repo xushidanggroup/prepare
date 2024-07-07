@@ -22,30 +22,10 @@ date: 2024-07-07
     border: 0;
     pointer-events: none; /* 禁用默认的鼠标事件 */
 }
+.contact-map:hover iframe {
+    pointer-events: auto; /* 启用鼠标事件 */
+}
 </style>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    var mapFrame = document.querySelector('.contact-map iframe');
-    var mapContainer = document.querySelector('.contact-map');
-
-    mapContainer.addEventListener('mouseenter', function() {
-        mapFrame.style.pointerEvents = 'auto';
-    });
-
-    mapContainer.addEventListener('mouseleave', function() {
-        mapFrame.style.pointerEvents = 'none';
-    });
-
-    mapContainer.addEventListener('touchstart', function() {
-        mapFrame.style.pointerEvents = 'auto';
-    });
-
-    mapContainer.addEventListener('touchend', function() {
-        mapFrame.style.pointerEvents = 'none';
-    });
-});
-</script>
 
 <div class="contact-container">
     <div class="contact-details">
