@@ -20,6 +20,14 @@ date: 2024-07-07
     height: 300px; /* 调整高度以使地图底端与文本底端对齐 */
     border: 0;
 }
+.campus-image {
+    margin-top: 20px;
+    text-align: center;
+}
+.campus-image img {
+    max-width: 100%;
+    height: auto;
+}
 </style>
 
 <div class="contact-container">
@@ -35,6 +43,6 @@ date: 2024-07-07
     </div>
 </div>
 
-<div style="margin-top: 20px; text-align: center;">
-    <img src="images/毕业典礼合照.jpg" alt="毕业典礼合照" style="max-width: 100%; height: auto;">
+<div class="campus-image">
+    <img src="/images/校区照片.jpg" alt="校区照片">
 </div>
