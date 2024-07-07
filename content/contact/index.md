@@ -6,27 +6,38 @@ date: 2024-07-07
 <style>
 .contact-container {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
 }
-.contact-details {
-    max-width: 45%;
-}
-.contact-map {
-    max-width: 50%;
+.contact-details, .contact-map {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
 }
 .contact-map iframe {
     width: 100%;
-    height: 300px; /* Adjust height to align the bottom of the map with the bottom of the text */
+    height: 300px; /* Adjust height as needed */
     border: 0;
 }
 .campus-image {
-    margin-top: 20px;
     text-align: center;
 }
 .campus-image img {
     width: 100%;
     height: auto;
+}
+@media(min-width: 768px) {
+    .contact-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .contact-details {
+        max-width: 45%;
+    }
+    .contact-map {
+        max-width: 50%;
+    }
 }
 </style>
 
