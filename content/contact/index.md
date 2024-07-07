@@ -43,11 +43,6 @@ date: 2024-07-07
     </div>
 </div>
 
-<div class="contact-map">
-    <iframe src="https://map.scut.edu.cn/login_home.html" allowfullscreen="" loading="lazy"></iframe>
-</div>
-
 <div class="campus-image">
-    <img src="./校区地图.jpg" alt="校区地图">
     <img src="./校区照片.jpg" alt="校区照片">
 </div>
