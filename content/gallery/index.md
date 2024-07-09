@@ -3,7 +3,6 @@ title:
 date: 2023-06-19T12:00:00Z
 ---
 
-{{< rawhtml >}}
 <style>
 h1 {
     text-align: center;
@@ -209,4 +208,3 @@ document.addEventListener('DOMContentLoaded', () => {
     autoSwitchImages();
 });
 </script>
-{{< /rawhtml >}}
