@@ -3,104 +3,105 @@ title:
 date: 2023-06-19T12:00:00Z
 ---
 
+{{< rawhtml >}}
 <style>
-    h1 {
-        text-align: center;
-        margin-bottom: 1px;
-    }
+h1 {
+    text-align: center;
+    margin-bottom: 1px;
+}
 
-    .gallery {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-    .gallery-main {
-        width: 100%;
-        max-width: 90vw;
-        text-align: center;
-        position: relative;
-        margin-bottom: 10px; /* Adjusted margin here */
-    }
+.gallery-main {
+    width: 100%;
+    max-width: 90vw;
+    text-align: center;
+    position: relative;
+    margin-bottom: 10px; /* Adjusted margin here */
+}
 
-    .gallery-main img {
-        max-width: 100%;
-        max-height: 100vh;
-        height: auto;
-        border: none;
-        transition: opacity 1s ease-in-out;
-    }
+.gallery-main img {
+    max-width: 100%;
+    max-height: 100vh;
+    height: auto;
+    border: none;
+    transition: opacity 1s ease-in-out;
+}
 
-    .gallery-thumbnails {
-        display: flex;
-        justify-content: start; /* Modified to ensure alignment */
-        gap: 10px;
-        overflow-x: auto;
-        white-space: nowrap;
-        width: 100%;
-        padding: 1px;
-        box-sizing: border-box; /* Ensure padding and content are calculated together */
-        margin-bottom: 10px; /* Adjusted margin here */
-    }
+.gallery-thumbnails {
+    display: flex;
+    justify-content: start; /* Modified to ensure alignment */
+    gap: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+    padding: 1px;
+    box-sizing: border-box; /* Ensure padding and content are calculated together */
+    margin-bottom: 10px; /* Adjusted margin here */
+}
 
-    .thumbnail-container {
-        display: inline-block;
-        cursor: pointer;
-        position: relative;
-        pointer-events: none;
-    }
+.thumbnail-container {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    pointer-events: none;
+}
 
-    .thumbnail-container img {
-        max-width: 150px;
-        max-height: 100px;
-        width: auto;
-        height: auto;
-        transition: transform 0.3s, border 0.3s;
-        pointer-events: auto;
-    }
+.thumbnail-container img {
+    max-width: 150px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+    transition: transform 0.3s, border 0.3s;
+    pointer-events: auto;
+}
 
-    .thumbnail-container img:hover {
-        transform: scale(1.1);
-        border: none;
-    }
+.thumbnail-container img:hover {
+    transform: scale(1.1);
+    border: none;
+}
 
-    .gallery-thumbnails::-webkit-scrollbar {
-        height: 8px;
-    }
+.gallery-thumbnails::-webkit-scrollbar {
+    height: 8px;
+}
 
-    .gallery-thumbnails::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 4px;
-    }
+.gallery-thumbnails::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
 
-    .gallery-thumbnails::-webkit-scrollbar-thumb:hover {
-        background: #555;
-    }
+.gallery-thumbnails::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
 
-    .gallery-thumbnails::-webkit-scrollbar-track {
-        background: #f1f1f1;
-    }
+.gallery-thumbnails::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
 
-    .gallery-nav {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        border: none;
-        font-size: 2em;
-        padding: 5px;
-        cursor: pointer;
-        z-index: 1;
-    }
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2em;
+    padding: 5px;
+    cursor: pointer;
+    z-index: 1;
+}
 
-    .gallery-nav.left {
-        left: 5px;
-    }
+.gallery-nav.left {
+    left: 5px;
+}
 
-    .gallery-nav.right {
-        right: 5px;
-    }
+.gallery-nav.right {
+    right: 5px;
+}
 </style>
 
 <div class="gallery">
@@ -147,64 +148,65 @@ date: 2023-06-19T12:00:00Z
 </div>
 
 <script>
-    const images = [
-        { src: '/images/清远漂流.jpg' },
-        { src: '/images/冬至.jpg' },
-        { src: '/images/石门.jpg' },
-        { src: '/images/石门1.jpg' },
-        { src: '/images/石门2.jpg' },
-        { src: '/images/红林花海.jpg' },
-        { src: '/images/羽毛球赛.jpg' },
-        { src: '/images/课题组合照.jpg' },
-        { src: '/images/毕业典礼合照.jpg' },
-        { src: '/images/龙林毕业聚餐.jpg' }
-    ];
+const images = [
+    { src: '/images/清远漂流.jpg' },
+    { src: '/images/冬至.jpg' },
+    { src: '/images/石门.jpg' },
+    { src: '/images/石门1.jpg' },
+    { src: '/images/石门2.jpg' },
+    { src: '/images/红林花海.jpg' },
+    { src: '/images/羽毛球赛.jpg' },
+    { src: '/images/课题组合照.jpg' },
+    { src: '/images/毕业典礼合照.jpg' },
+    { src: '/images/龙林毕业聚餐.jpg' }
+];
 
-    let currentIndex = 1;
-    let autoSwitchInterval;
-    const transitionTime = 1000; // 1 second
-    const quickTransitionTime = 500; // 0.5 second
+let currentIndex = 1;
+let autoSwitchInterval;
+const transitionTime = 1000; // 1 second
+const quickTransitionTime = 500; // 0.5 second
 
-    function showImage(index, quick = false) {
-        currentIndex = index;
-        const mainImage = document.getElementById('mainImage');
+function showImage(index, quick = false) {
+    currentIndex = index;
+    const mainImage = document.getElementById('mainImage');
 
-        if (quick) {
-            mainImage.style.transition = `opacity ${quickTransitionTime}ms ease-in-out`;
-        } else {
-            mainImage.style.transition = `opacity ${transitionTime}ms ease-in-out`;
-        }
-
-        mainImage.style.opacity = 0;
-
-        setTimeout(() => {
-            mainImage.src = images[index].src;
-            mainImage.style.opacity = 1;
-        }, quick ? quickTransitionTime : transitionTime);
-
-        resetAutoSwitch();
+    if (quick) {
+        mainImage.style.transition = `opacity ${quickTransitionTime}ms ease-in-out`;
+    } else {
+        mainImage.style.transition = `opacity ${transitionTime}ms ease-in-out`;
     }
 
-    function showNextImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        showImage(currentIndex, true);
-    }
+    mainImage.style.opacity = 0;
 
-    function showPreviousImage() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        showImage(currentIndex, true);
-    }
+    setTimeout(() => {
+        mainImage.src = images[index].src;
+        mainImage.style.opacity = 1;
+    }, quick ? quickTransitionTime : transitionTime);
 
-    function autoSwitchImages() {
-        autoSwitchInterval = setInterval(showNextImage, 5000); // 5 seconds
-    }
+    resetAutoSwitch();
+}
 
-    function resetAutoSwitch() {
-        clearInterval(autoSwitchInterval);
-        autoSwitchImages();
-    }
+function showNextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex, true);
+}
 
-    document.addEventListener('DOMContentLoaded', () => {
-        autoSwitchImages();
-    });
+function showPreviousImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex, true);
+}
+
+function autoSwitchImages() {
+    autoSwitchInterval = setInterval(showNextImage, 5000); // 5 seconds
+}
+
+function resetAutoSwitch() {
+    clearInterval(autoSwitchInterval);
+    autoSwitchImages();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    autoSwitchImages();
+});
 </script>
+{{< /rawhtml >}}
