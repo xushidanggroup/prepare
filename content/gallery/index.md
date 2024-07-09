@@ -15,15 +15,32 @@ date: 2023-06-19T12:00:00Z
         align-items: center;
     }
 
+    .gallery-main {
+        width: 100%;
+        max-width: 90vw;
+        text-align: center;
+        position: relative;
+        margin-bottom: 10px; /* Adjusted margin here */
+    }
+
+    .gallery-main img {
+        max-width: 100%;
+        max-height: 100vh;
+        height: auto;
+        border: none;
+        transition: opacity 1s ease-in-out;
+    }
+
     .gallery-thumbnails {
         display: flex;
-        justify-content: start; /* 修改为start以确保从头开始排列 */
+        justify-content: start; /* Modified to ensure alignment */
         gap: 10px;
         overflow-x: auto;
         white-space: nowrap;
         width: 100%;
         padding: 1px;
-        box-sizing: border-box; /* 确保padding和内容一起计算宽度 */
+        box-sizing: border-box; /* Ensure padding and content are calculated together */
+        margin-bottom: 10px; /* Adjusted margin here */
     }
 
     .thumbnail-container {
@@ -47,20 +64,21 @@ date: 2023-06-19T12:00:00Z
         border: none;
     }
 
-    .gallery-main {
-        width: 100%;
-        max-width: 90vw;
-        text-align: center;
-        position: relative;
-        margin-top: 1px;
+    .gallery-thumbnails::-webkit-scrollbar {
+        height: 8px;
     }
 
-    .gallery-main img {
-        max-width: 100%;
-        max-height: 100vh;
-        height: auto;
-        border: none;
-        transition: opacity 1s ease-in-out;
+    .gallery-thumbnails::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+    }
+
+    .gallery-thumbnails::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+    .gallery-thumbnails::-webkit-scrollbar-track {
+        background: #f1f1f1;
     }
 
     .gallery-nav {
@@ -83,27 +101,17 @@ date: 2023-06-19T12:00:00Z
     .gallery-nav.right {
         right: 5px;
     }
-
-    .gallery-thumbnails::-webkit-scrollbar {
-        height: 8px;
-    }
-
-    .gallery-thumbnails::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 4px;
-    }
-
-    .gallery-thumbnails::-webkit-scrollbar-thumb:hover {
-        background: #555;
-    }
-
-    .gallery-thumbnails::-webkit-scrollbar-track {
-        background: #f1f1f1;
-    }
 </style>
 
 <div class="gallery">
     <h1>Gallery</h1>
+    
+    <div class="gallery-main">
+        <button class="gallery-nav left" onclick="showPreviousImage()">&#10094;</button>
+        <img src="/images/冬至.jpg" alt="Main Image" id="mainImage">
+        <button class="gallery-nav right" onclick="showNextImage()">&#10095;</button>
+    </div>
+
     <div class="gallery-thumbnails">
         <div class="thumbnail-container" onclick="showImage(0, true)">
             <img src="/images/清远漂流.jpg" alt="Thumbnail 清远漂流">
@@ -136,16 +144,11 @@ date: 2023-06-19T12:00:00Z
             <img src="/images/龙林毕业聚餐.jpg" alt="Thumbnail 龙林毕业聚餐">
         </div>
     </div>
-    <div class="gallery-main">
-        <button class="gallery-nav left" onclick="showPreviousImage()">&#10094;</button>
-        <img src="/images/冬至.jpg" alt="Main Image" id="mainImage">
-        <button class="gallery-nav right" onclick="showNextImage()">&#10095;</button>
-    </div>
 </div>
 
 <script>
     const images = [
-        { src: '/images/清远漂流.jpg'},
+        { src: '/images/清远漂流.jpg' },
         { src: '/images/冬至.jpg' },
         { src: '/images/石门.jpg' },
         { src: '/images/石门1.jpg' },
