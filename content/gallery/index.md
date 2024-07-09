@@ -1,8 +1,9 @@
 ---
-title:
+title: "Gallery"
 date: 2023-06-19T12:00:00Z
 ---
 
+{{< rawhtml >}}
 <style>
 h1 {
     text-align: center;
@@ -20,7 +21,7 @@ h1 {
     max-width: 90vw;
     text-align: center;
     position: relative;
-    margin-bottom: 10px; /* Adjusted margin here */
+    margin-bottom: 10px;
 }
 
 .gallery-main img {
@@ -33,14 +34,14 @@ h1 {
 
 .gallery-thumbnails {
     display: flex;
-    justify-content: start; /* Modified to ensure alignment */
+    justify-content: start;
     gap: 10px;
     overflow-x: auto;
     white-space: nowrap;
     width: 100%;
     padding: 1px;
-    box-sizing: border-box; /* Ensure padding and content are calculated together */
-    margin-bottom: 10px; /* Adjusted margin here */
+    box-sizing: border-box;
+    margin-bottom: 10px;
 }
 
 .thumbnail-container {
@@ -162,8 +163,8 @@ const images = [
 
 let currentIndex = 1;
 let autoSwitchInterval;
-const transitionTime = 1000; // 1 second
-const quickTransitionTime = 500; // 0.5 second
+const transitionTime = 1000;
+const quickTransitionTime = 500;
 
 function showImage(index, quick = false) {
     currentIndex = index;
@@ -196,7 +197,7 @@ function showPreviousImage() {
 }
 
 function autoSwitchImages() {
-    autoSwitchInterval = setInterval(showNextImage, 5000); // 5 seconds
+    autoSwitchInterval = setInterval(showNextImage, 5000);
 }
 
 function resetAutoSwitch() {
@@ -208,3 +209,4 @@ document.addEventListener('DOMContentLoaded', () => {
     autoSwitchImages();
 });
 </script>
+{{< /rawhtml >}}
