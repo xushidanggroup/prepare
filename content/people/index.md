@@ -102,7 +102,7 @@ sections:
 
         <div class="container">
           <div class="person">
-            <img src="Xu/avatar.jpg" alt="Shidang Xu 许适当">
+            <a href="Xu"><img src="Xu/avatar.jpg" alt="Shidang Xu 许适当"></a>
             <p class="name">Shidang Xu 许适当</p>
             <p class="details">Professor in Biomedical Engineering</p>
             <div class="email" onclick="copyToClipboard('xusd@scut.edu.cn')">
