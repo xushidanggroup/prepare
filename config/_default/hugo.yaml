@@ -4,7 +4,7 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 title: Wowchemy Research Group # Website name
-baseURL: 'https://xushidanggroup.github.io/prepare' # Website URL
+baseURL: 'https://xushidanggroup.github.io/prepare/' # Website URL
 
 ############################
 ## LANGUAGE
