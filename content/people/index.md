@@ -102,8 +102,8 @@ sections:
 
         <div class="container">
           <div class="person">
-            <a href="/people/Xu/"><img src="/people/Xu/avatar.jpg" alt="Shidang Xu 许适当"></a>
-            <p class="name"><a href="/people/Xu/">Shidang Xu 许适当</a></p>
+            <a href="/prepare/people/Xu/"><img src="/people/Xu/avatar.jpg" alt="Shidang Xu 许适当"></a>
+            <p class="name"><a href="/prepare/people/Xu/">Shidang Xu 许适当</a></p>
             <p class="details">Professor in Biomedical Engineering</p>
             <div class="email" onclick="copyToClipboard('xusd@scut.edu.cn')">
               <i class="fas fa-envelope"></i><span>xusd@scut.edu.cn</span>
