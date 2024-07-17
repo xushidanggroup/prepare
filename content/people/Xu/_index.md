@@ -1,7 +1,5 @@
 ---
-title: |
-  Shidang Xu
-  许适当
+title: Shidang Xu
 first_name: Shidang
 last_name: Xu
 authors:
