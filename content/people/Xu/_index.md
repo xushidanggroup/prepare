@@ -10,7 +10,7 @@ last_name: Xu
 
 # Username (this should match the folder name)
 authors:
-  - 许适当
+  - xu
 
 # Is this the primary user of the site?
 superuser: false
@@ -77,6 +77,3 @@ email: 'xusd@scut.edu.cn'
 user_groups:
   - Principle Investigator
 ---
-
-Professor Xu received his Ph.D. from the National University of Singapore in 2020 and continued his postdoctoral research there from 2020 to 2022. In 2022, he joined the School of Biomedical Sciences and Engineering at South China University of Technology as a professor and Ph.D. advisor. Professor Xu currently leads several national-level youth talent projects, National Natural Science Foundation of China (NSFC) grants, and key sub-projects under the Ministry of Science and Technology.
-Professor Xu has published 18 papers as the first or corresponding author, including high-impact papers in journals such as J Am Chem Soc, Angew Chem Int Ed, and Adv Mater. His work has been cited over 7,000 times, with an H-index of 43.
