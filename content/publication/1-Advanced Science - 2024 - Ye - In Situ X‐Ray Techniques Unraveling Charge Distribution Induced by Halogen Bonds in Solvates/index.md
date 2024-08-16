@@ -1,5 +1,5 @@
 ---
-title: 'Konstantin Karaghiosoff. In Situ X-Ray Techniques Unraveling Charge Distribution Induced by Halogen Bonds in Solvates of an Iodo-Substituted Squaraine Dye'
+title: 'In Situ X-Ray Techniques Unraveling Charge Distribution Induced by Halogen Bonds in Solvates of an Iodo-Substituted Squaraine Dye'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
@@ -12,6 +12,7 @@ authors:
   - Shidang Xu*
   - Bin Liu*
   - Yi-Hung Chen*
+  - Konstantin Karaghiosoff
 
 # Author notes (optional)
 author_notes:
@@ -22,6 +23,7 @@ author_notes:
   - 'Corresponding author'
   - 'Corresponding author'
   - 'Corresponding author'
+  - 'Equal contribution'
 
 date: '2024-04-24T00:00:00Z'
 doi: '10.1002/advs.202400661'
