@@ -66,7 +66,7 @@ featured: true
 # - name: Custom Link
 #   url: http://example.org
 
-url_pdf: ''
+url_pdf: 'https://onlinelibrary.wiley.com/doi/epdf/10.1002/adfm.202313755'
 url_code: ''
 url_dataset: ''
 url_poster: ''
