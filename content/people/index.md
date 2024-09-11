@@ -102,8 +102,8 @@ sections:
 
         <div class="container">
           <div class="person">
-            <a href="/prepare/people/Xu/"><img src="/prepare/people/Xu/avatar.jpg" alt="Shidang Xu 许适当"></a>
-            <p class="name"><a href="/prepare/people/Xu/">Shidang Xu 许适当</a></p>
+            <img src="Xu/avatar.jpg" alt="Shidang Xu 许适当">
+            <p class="name">Shidang Xu 许适当</p>
             <p class="details">Professor in Biomedical Engineering</p>
             <div class="email" onclick="copyToClipboard('xusd@scut.edu.cn')">
               <i class="fas fa-envelope"></i><span>xusd@scut.edu.cn</span>
@@ -113,4 +113,175 @@ sections:
             </div>
           </div>
         </div>
+
+        ---
+
+        ## Graduate Students
+
+        <div class="container">
+          <div class="person">
+            <img src="Bin/avatar.jpg" alt="Bin Xu">
+            <p class="name">Bin Xu 许膑</p>
+            <p class="details">23 PhD Student in Biomedical Engineering</p>
+            <div class="email" onclick="copyToClipboard('mailto:bun_hui@126.com')">
+              <i class="fas fa-envelope"></i><span>mailto:bun_hui@126.com</span>
+            </div>
+          </div>
+          <div class="person">
+            <img src="NB/avatar.jpg" alt="Graduate Student">
+            <p class="name">Bo Niu 牛博</p>
+            <p class="details">24 Master’s Student in Pharmacy</p>
+            <div class="email" onclick="copyToClipboard('niubo7645@gmail.com')">
+              <i class="fas fa-envelope"></i><span>niubo7645@gmail.com</span>
+            </div>
+          </div>
+          <div class="person">
+            <img src="CC/avatar.jpg" alt="Graduate Student">
+            <p class="name">Chenchen Li 李晨晨</p>
+            <p class="details">23 PhD Student in Biomedical Engineering</p>
+            <div class="email" onclick="copyToClipboard('mailto:lcc1430880822@163.com')">
+              <i class="fas fa-envelope"></i><span>mailto:lcc1430880822@163.com</span>
+            </div>
+          </div>
+          <div class="person">
+            <img src="JD/avatar.jpg" alt="Graduate Student">
+            <p class="name">Jinda Yan 闫缙达</p>
+            <p class="details">24 PhD Student in Materials and Chemical Engineering</p>
+            <div class="email" onclick="copyToClipboard('jdyan09@163.com')">
+              <i class="fas fa-envelope"></i><span>jdyan09@163.com</span>
+            </div>
+          </div>
+          <div class="person">
+            <img src="JC/avatar.jpg" alt="Graduate Student">
+            <p class="name">Jingcheng Mo 莫景丞</p>
+            <p class="details">24 Master’s Student in Pharmacy</p>
+            <div class="email" onclick="copyToClipboard('jingchengmo@foxmail.com')">
+              <i class="fas fa-envelope"></i><span>jingchengmo@foxmail.com</span>
+            </div>
+          </div>
+          <div class="person">
+            <img src="OY/avatar.jpg" alt="Graduate Student">
+            <p class="name">Junchi Ouyang 欧阳骏驰</p>
+            <p class="details">24 Master’s Student in Biomedical Engineering</p>
+            <div class="email" onclick="copyToClipboard('oyjc_scut@126.com')">
+              <i class="fas fa-envelope"></i><span>oyjc_scut@126.com</span>
+            </div>
+          </div>
+          <div class="person">
+            <img src="LP/avatar.jpg" alt="Graduate Student">
+            <p class="name">Lipeng Luo 罗丽鹏</p>
+            <p class="details">24 Master’s Student in Biomedical Engineering</p>
+            <div class="email" onclick="copyToClipboard('llp_scut@126.com')">
+              <i class="fas fa-envelope"></i><span>llp_scut@126.com</span>
+            </div>
+          </div>
+          <div class="person">
+            <img src="MT/avatar.jpg" alt="Graduate Student">
+            <p class="name">Meitang Peng 彭美堂</p>
+            <p class="details">23 Master’s Student in Biomedical Engineering</p>
+            <div class="email" onclick="copyToClipboard('mailto:meitangpeng@gmail.com')">
+              <i class="fas fa-envelope"></i><span>mailto:meitangpeng@gmail.com</span>
+            </div>
+          </div>
+          <div class="person">
+            <img src="SC/avatar.jpg" alt="Graduate Student">
+            <p class="name">Shicheng Lang 稂世成</p>
+            <p class="details">24 PhD Student in Biomedical Engineering</p>
+          </div>
+          <div class="person">
+            <img src="YH/avatar.jpg" alt="Graduate Student">
+            <p class="name">Yinghao Liu 刘英豪</p>
+            <p class="details">23 Master’s Student in Chemistry</p>
+            <div class="email" onclick="copyToClipboard('mailto:Yinghao612@gmail.com')">
+              <i class="fas fa-envelope"></i><span>mailto:Yinghao612@gmail.com</span>
+            </div>
+          </div>
+          <div class="person">
+            <img src="YJ/avatar.jpg" alt="Graduate Student">
+            <p class="name">Yujian Liu 刘宇健</p>
+            <p class="details">23 Master’s Student in Biomedical Engineering</p>
+            <div class="email" onclick="copyToClipboard('mailto:liuyujian0408@gmail.com')">
+              <i class="fas fa-envelope"></i><span>mailto:liuyujian0408@gmail.com</span>
+            </div>
+          </div>
+        </div>
+
+        ---
+      
+        ## Undergraduate Students
+
+        <table style="width:100%; border-collapse: collapse; border: none;">
+          <tr>
+            <td style="width: 20%; padding: 8px; vertical-align: middle;">Ruoqi Chen 陈若琪</td>
+            <td style="width: 35%; padding: 8px; vertical-align: middle;">Biomedical Engineering at SCUT (2021)</td>
+            <td style="width: 45%; padding: 8px; vertical-align: middle;"></td>
+          </tr>
+          <tr>
+            <td style="width: 20%; padding: 8px; vertical-align: middle;">Xinjie Shen 沈鑫杰</td>
+            <td style="width: 35%; padding: 8px; vertical-align: middle;">Artificial Intelligence at SCUT (2021)</td>
+            <td style="width: 45%; padding: 8px; vertical-align: middle;"></td>
+          </tr>
+          <tr>
+            <td style="width: 20%; padding: 8px; vertical-align: middle;">Qingquan Wang 王庆全</td>
+            <td style="width: 35%; padding: 8px; vertical-align: middle;">Biomedical Engineering at SCUT (2022)</td>
+            <td style="width: 45%; padding: 8px; vertical-align: middle;"></td>
+          </tr>
+          <tr>
+            <td style="width: 20%; padding: 8px; vertical-align: middle;">Yutong Wang 王雨桐</td>
+            <td style="width: 35%; padding: 8px; vertical-align: middle;">Biomedical Engineering at SCUT (2022)</td>
+            <td style="width: 45%; padding: 8px; vertical-align: middle;"></td>
+          </tr>
+        </table>
+
+        ---
+
+        ## Alumni
+
+        <table style="width:100%; border-collapse: collapse; border: none;">
+          <tr>
+            <td style="width: 20%; padding: 8px; vertical-align: middle;">Lu Qiu 邱璐</td>
+            <td style="width: 35%; padding: 8px; vertical-align: middle;">Biomedical Engineering at SCUT (2019-2023)</td>
+            <td style="width: 45%; padding: 8px; vertical-align: middle;">Master of Biostatistics, Columbia University (2023)</td>
+          </tr>
+          <tr>
+            <td style="width: 20%; padding: 8px; vertical-align: middle;">Yunlong Zhu 朱云龙</td>
+            <td style="width: 35%; padding: 8px; vertical-align: middle;">Biomedical Engineering at SCUT (2019-2023)</td>
+            <td style="width: 45%; padding: 8px; vertical-align: middle;">Master of science and engineering, Johns Hopkins University (2023)</td>
+          </tr>
+          <tr>
+            <td style="width: 20%; padding: 8px; vertical-align: middle;">Ying Chen 陈颖</td>
+            <td style="width: 35%; padding: 8px; vertical-align: middle;">Biomedical Engineering at SCUT (2019-2023)</td>
+            <td style="width: 45%; padding: 8px; vertical-align: middle;">Master of Biomedical engineering, University of Electronic Science and Technology of China (2023)</td>
+          </tr>
+          <tr>
+            <td style="width: 20%; padding: 8px; vertical-align: middle;">Ranxuan Zhang 张然轩</td>
+            <td style="width: 35%; padding: 8px; vertical-align: middle;">Biomedical Engineering at SCUT (2019-2023)</td>
+            <td style="width: 45%; padding: 8px; vertical-align: middle;">Master of Biomedical engineering, Chalmers University of Technology (2023)</td>
+          </tr>
+          <tr>
+            <td style="width: 20%; padding: 8px; vertical-align: middle;">Yuan Chen 陈源</td>
+            <td style="width: 35%; padding: 8px; vertical-align: middle;">Biomedical Engineering at SCUT (2020-2024)</td>
+            <td style="width: 45%; padding: 8px; vertical-align: middle;">PhD in Chemistry, Nanyang Technological University (2024)</td>
+          </tr>
+          <tr>
+            <td style="width: 20%; padding: 8px; vertical-align: middle;">Fangxi Lian 练方熙</td>
+            <td style="width: 35%; padding: 8px; vertical-align: middle;">Biomedical Engineering at SCUT (2020-2024)</td>
+            <td style="width: 45%; padding: 8px; vertical-align: middle;">Working at Lubangdi International Logistics Service Co.Ltd (2024)</td>
+          </tr>
+          <tr>
+            <td style="width: 20%; padding: 8px; vertical-align: middle;">Zihuang Lu 卢梓煌</td>
+            <td style="width: 35%; padding: 8px; vertical-align: middle;">Biomedical Engineering at SCUT (2020-2024)</td>
+            <td style="width: 45%; padding: 8px; vertical-align: middle;">Master of Bioinformatics, University of Science and Technology of China (2024)</td>
+          </tr>
+          <tr>
+            <td style="width: 20%; padding: 8px; vertical-align: middle;">Ruoxuan Wu 吴若萱</td>
+            <td style="width: 35%; padding: 8px; vertical-align: middle;">Biomedical Engineering at SCUT (2020-2024)</td>
+            <td style="width: 45%; padding: 8px; vertical-align: middle;">PhD in Biomedical engineering, University of Texas, Southwestern Medical Center at Dallas (2024)</td>
+          </tr>
+          <tr>
+            <td style="width: 20%; padding: 8px; vertical-align: middle;">Mingyu Lin 林明宇</td>
+            <td style="width: 35%; padding: 8px; vertical-align: middle;">Biomedical Engineering at SCUT (2020-2024)</td>
+            <td style="width: 45%; padding: 8px; vertical-align: middle;">Master in Biomedical Engineering, National University of Singapore (2024)</td>
+          </tr>
+        </table>
 ---
