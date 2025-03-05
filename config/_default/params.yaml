@@ -116,3 +116,11 @@ extensions:
 publications:
   date_format: January 2006
   citation_style: apa
+
+imaging:
+  quality: 85
+  resizeMethod: Lanczos
+  anchor: Smart
+gallery:
+  columns: 3
+  lazyLoading: true

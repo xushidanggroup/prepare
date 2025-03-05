@@ -60,3 +60,10 @@ security:
   _merge: deep
 sitemap:
   _merge: deep
+
+build:
+  minify:
+    minifyOutput: true
+  writeStats: true
+  cachebuster:
+    enable: true
