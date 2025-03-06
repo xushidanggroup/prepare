@@ -19,7 +19,8 @@
         width: 100%;
         padding: 1px;
         box-sizing: border-box;
-        min-height: 120px; /* 确保容器可见 */
+        min-height: 120px;
+        scroll-behavior: smooth; /* 添加平滑滚动 */
     }
 
     .thumbnail-container {
@@ -50,7 +51,7 @@
         text-align: center;
         position: relative;
         margin-top: 20px;
-        min-height: 500px; /* 确保主图区域可见 */
+        min-height: 500px;
     }
 
     .gallery-main img {
@@ -76,21 +77,6 @@
 
     .gallery-nav.left { left: 5px; }
     .gallery-nav.right { right: 5px; }
-
-    /* 滚动条样式 */
-    .gallery-thumbnails::-webkit-scrollbar {
-        height: 8px;
-    }
-    .gallery-thumbnails::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 4px;
-    }
-    .gallery-thumbnails::-webkit-scrollbar-thumb:hover {
-        background: #555;
-    }
-    .gallery-thumbnails::-webkit-scrollbar-track {
-        background: #f1f1f1;
-    }
 </style>
 
 <div class="gallery">
@@ -104,11 +90,8 @@
 </div>
 
 <script>
-// 全局变量
 let currentIndex = 0;
 let autoSwitchInterval;
-
-// 配置参数
 const imageBasePath = '/images/';
 const imageFiles = [
     '冬至.jpg',
@@ -119,18 +102,14 @@ const imageFiles = [
     '大南山_5.jpg',
     '大南山_6.jpg'
 ];
-
-// 生成图片对象
 const images = imageFiles.map(fileName => ({
     src: `${imageBasePath}${fileName}`,
     alt: fileName.replace(/_/g, ' ').replace(/\..+$/, '')
 }));
 
-// 生成缩略图
 function generateThumbnails() {
     const container = document.getElementById('thumbnailContainer');
     container.innerHTML = '';
-    
     images.forEach((img, index) => {
         const thumbnail = document.createElement('div');
         thumbnail.className = 'thumbnail-container';
@@ -140,29 +119,36 @@ function generateThumbnails() {
     });
 }
 
-// 更新激活状态
 function updateActiveThumbnail(index) {
-    document.querySelectorAll('.thumbnail-container').forEach((container, i) => {
+    const thumbnails = document.querySelectorAll('.thumbnail-container');
+    thumbnails.forEach((container, i) => {
         container.classList.toggle('active', i === index);
     });
+    scrollThumbnailIntoView(index);
 }
 
-// 图片切换核心函数
+function scrollThumbnailIntoView(index) {
+    const container = document.getElementById('thumbnailContainer');
+    const thumbnails = document.querySelectorAll('.thumbnail-container');
+    if (thumbnails[index]) {
+        const thumbnail = thumbnails[index];
+        const containerRect = container.getBoundingClientRect();
+        const thumbnailRect = thumbnail.getBoundingClientRect();
+        container.scrollLeft += (thumbnailRect.left - containerRect.left) - (container.clientWidth / 2) + (thumbnail.clientWidth / 2);
+    }
+}
+
 async function showImage(index, quick = false) {
     if (index < 0 || index >= images.length) return;
-    
     const mainImage = document.getElementById('mainImage');
     mainImage.style.transition = `opacity ${quick ? 500 : 1000}ms`;
     mainImage.style.opacity = 0;
-
-    // 使用实际图片路径加载
     const actualSrc = await new Promise(resolve => {
         const img = new Image();
         img.src = images[index].src;
         img.onload = () => resolve(img.src);
         img.onerror = () => resolve('/images/fallback.jpg');
     });
-
     setTimeout(() => {
         mainImage.src = actualSrc;
         mainImage.alt = images[index].alt;
@@ -170,11 +156,9 @@ async function showImage(index, quick = false) {
         currentIndex = index;
         updateActiveThumbnail(index);
     }, quick ? 500 : 1000);
-
     resetAutoSwitch();
 }
 
-// 导航功能
 function showNextImage() {
     currentIndex = (currentIndex + 1) % images.length;
     showImage(currentIndex, true);
@@ -185,19 +169,16 @@ function showPreviousImage() {
     showImage(currentIndex, true);
 }
 
-// 自动切换控制
 function resetAutoSwitch() {
     clearInterval(autoSwitchInterval);
     autoSwitchInterval = setInterval(showNextImage, 5000);
 }
 
-// 键盘控制
 document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') showPreviousImage();
     if (e.key === 'ArrowRight') showNextImage();
 });
 
-// 初始化
 document.addEventListener('DOMContentLoaded', () => {
     generateThumbnails();
     if (images.length > 0) {
