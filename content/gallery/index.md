@@ -49,7 +49,7 @@ date: 2023-06-19T12:00:00Z
 
     .gallery-main {
         width: 100%;
-        max-width: 90vw;
+        max-width: 100%;
         text-align: center;
         position: relative;
         margin-top: 1px;
@@ -57,7 +57,7 @@ date: 2023-06-19T12:00:00Z
 
     .gallery-main img {
         max-width: 100%;
-        max-height: 100vh;
+        max-height: 100%;
         height: auto;
         border: none;
         transition: opacity 1s ease-in-out;
