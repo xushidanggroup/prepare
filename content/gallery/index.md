@@ -127,6 +127,11 @@ date: 2023-06-19T12:00:00Z
             <img src="/images/大南山_6.jpg" alt="Thumbnail 大南山_6">
         </div>
     </div>
+    <div class="gallery-main">
+        <button class="gallery-nav left" onclick="showPreviousImage()">&#10094;</button>
+        <img src="/images/冬至.jpg" alt="Main Image" id="mainImage">
+        <button class="gallery-nav right" onclick="showNextImage()">&#10095;</button>
+    </div>
 </div>
 
 <script>
