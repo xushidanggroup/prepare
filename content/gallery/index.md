@@ -1,3 +1,8 @@
+---
+title:
+date: 2023-06-19T12:00:00Z
+---
+
 <style>
     h1 {
         text-align: center;
@@ -12,13 +17,13 @@
 
     .gallery-thumbnails {
         display: flex;
-        justify-content: start;
+        justify-content: start; /* 修改为start以确保从头开始排列 */
         gap: 10px;
         overflow-x: auto;
         white-space: nowrap;
         width: 100%;
         padding: 1px;
-        box-sizing: border-box;
+        box-sizing: border-box; /* 确保padding和内容一起计算宽度 */
     }
 
     .thumbnail-container {
@@ -44,15 +49,15 @@
 
     .gallery-main {
         width: 100%;
-        max-width: 95vw;
+        max-width: 90vw;
         text-align: center;
         position: relative;
-        margin-top: 20px;
+        margin-top: 1px;
     }
 
     .gallery-main img {
         max-width: 100%;
-        max-height: 80vh;
+        max-height: 100vh;
         height: auto;
         border: none;
         transition: opacity 1s ease-in-out;
@@ -235,3 +240,4 @@
         autoSwitchImages();  // 页面加载后启动自动切换
     });
 </script>
+
