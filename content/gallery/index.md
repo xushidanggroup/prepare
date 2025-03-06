@@ -8,6 +8,9 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        max-width: 90vw;
+        width: 100%;
+        margin: auto;
     }
 
     .gallery-thumbnails {
@@ -16,11 +19,12 @@
         gap: 10px;
         overflow-x: auto;
         white-space: nowrap;
-        width: 100%;
+        width: 90%;
+        max-width: 1200px;
         padding: 1px;
         box-sizing: border-box;
         min-height: 120px;
-        scroll-behavior: smooth; /* 添加平滑滚动 */
+        scroll-behavior: smooth;
     }
 
     .thumbnail-container {
@@ -46,8 +50,8 @@
     }
 
     .gallery-main {
-        width: 100%;
-        max-width: 100%;
+        width: 90%;
+        max-width: 1200px;
         text-align: center;
         position: relative;
         margin-top: 20px;
@@ -94,13 +98,7 @@ let currentIndex = 0;
 let autoSwitchInterval;
 const imageBasePath = '/images/';
 const imageFiles = [
-    '冬至.jpg',
-    '大南山_1.jpg',
-    '大南山_2.jpg',
-    '大南山_3.jpg',
-    '大南山_4.jpg',
-    '大南山_5.jpg',
-    '大南山_6.jpg'
+    '冬至.jpg', '大南山_1.jpg', '大南山_2.jpg', '大南山_3.jpg', '大南山_4.jpg', '大南山_5.jpg', '大南山_6.jpg'
 ];
 const images = imageFiles.map(fileName => ({
     src: `${imageBasePath}${fileName}`,
