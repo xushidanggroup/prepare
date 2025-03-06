@@ -1,174 +1,243 @@
 ---
-title: "Group Gallery"
-date: 2025-03-06T16:18:37+08:00
-type: gallery
+title:
+date: 2023-06-19T12:00:00Z
 ---
 
-<!-- 画廊主容器（新增 ARIA 标签与键盘导航支持） -->
-<section class="gallery-container" aria-label="团队活动相册轮播图">
-  <div class="gallery-main">
-    <button class="gallery-nav left" onclick="handleNavClick(-1)" aria-label="上一张图片">&#10094;</button>
-    
-    <!-- 使用 Hugo Pipes 优化主图加载 -->
-    {{ $mainImage := resources.Get "images/红林花海2024.9.18.jpg" | fingerprint }}
-    <img id="mainImage" 
-         src="{{ $mainImage.RelPermalink }}" 
-         alt="团队在红林花海的活动合照：蓝天白云下，全体成员身着休闲装在花田中比心"
-         class="active"
-         onerror="handleImageError(this)">
-
-    <button class="gallery-nav right" onclick="handleNavClick(1)" aria-label="下一张图片">&#10094;</button>
-  </div>
-
-  <!-- 缩略图容器（支持触屏横向滚动） -->
-  <div class="gallery-thumbnails" role="group" aria-label="画廊缩略图导航">
-    <!-- 使用 Hugo range 遍历所有 images 文件夹图片 -->
-    {{ $images := resources.Match "images/gallery/*" }}
-    {{ range $index, $img := $images }}
-      {{ $thumbnail := $img.Fill "150x150 Center" | fingerprint }}
-      <div class="thumbnail-container" 
-           role="button" 
-           tabindex="0"
-           aria-label="跳转到第 {{ add $index 1 }} 张图片"
-           onclick="showImage({{ $index }})"
-           onkeydown="if(event.key === 'Enter') showImage({{ $index }})">
-        <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $img.Name | humanize }} 缩略图">
-      </div>
-    {{ end }}
-  </div>
-</section>
-
-<!-- 优化后的 CSS 样式 -->
 <style>
-.gallery-container {
-  max-width: 1200px;
-  margin: 2rem auto;
-  position: relative;
-}
+    h1 {
+        text-align: center;
+        margin-bottom: 1px;
+    }
 
-.gallery-main {
-  position: relative;
-  padding: 0 40px;
-}
+    .gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-#mainImage {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
+    .gallery-thumbnails {
+        display: flex;
+        justify-content: start; /* 修改为start以确保从头开始排列 */
+        gap: 10px;
+        overflow-x: auto;
+        white-space: nowrap;
+        width: 100%;
+        padding: 1px;
+        box-sizing: border-box; /* 确保padding和内容一起计算宽度 */
+    }
 
-.gallery-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  color: white;
-  border: none;
-  padding: 15px;
-  cursor: pointer;
-  font-size: 24px;
-  border-radius: 50%;
-  transition: background 0.3s;
-  z-index: 10;
-}
+    .thumbnail-container {
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        pointer-events: none;
+    }
 
-.gallery-nav:hover {
-  background: rgba(0,0,0,0.8);
-}
+    .thumbnail-container img {
+        max-width: 150px;
+        max-height: 100px;
+        width: auto;
+        height: auto;
+        transition: transform 0.3s, border 0.3s;
+        pointer-events: auto;
+    }
 
-.gallery-nav.left { left: 10px; }
-.gallery-nav.right { right: 10px; }
+    .thumbnail-container img:hover {
+        transform: scale(1.1);
+        border: none;
+    }
 
-.gallery-thumbnails {
-  display: flex;
-  gap: 10px;
-  padding: 20px 0;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch; /* iOS 滚动优化 */
-  scroll-behavior: smooth;
-}
+    .gallery-main {
+        width: 100%;
+        max-width: 90vw;
+        text-align: center;
+        position: relative;
+        margin-top: 1px;
+    }
 
-.thumbnail-container {
-  flex: 0 0 auto;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: border-color 0.2s;
-}
+    .gallery-main img {
+        max-width: 100%;
+        max-height: 100vh;
+        height: auto;
+        border: none;
+        transition: opacity 1s ease-in-out;
+    }
 
-.thumbnail-container:hover, 
-.thumbnail-container:focus {
-  border-color: #007bff;
-}
+    .gallery-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        font-size: 2em;
+        padding: 5px;
+        cursor: pointer;
+        z-index: 1;
+    }
 
-.thumbnail-container img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 4px;
-}
+    .gallery-nav.left {
+        left: 5px;
+    }
 
-/* 无障碍焦点状态 */
-.thumbnail-container:focus {
-  outline: 2px solid #007bff;
-  outline-offset: 2px;
-}
+    .gallery-nav.right {
+        right: 5px;
+    }
+
+    .gallery-thumbnails::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .gallery-thumbnails::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+    }
+
+    .gallery-thumbnails::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+    .gallery-thumbnails::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
 </style>
 
-<!-- 增强版 JavaScript 逻辑 -->
+<div class="gallery">
+    <h1>Gallery</h1>
+    <div class="gallery-thumbnails">
+        <div class="thumbnail-container" onclick="showImage(0, true)">
+            <img src="/images/清远漂流.jpg" alt="Thumbnail 清远漂流">
+        </div>
+        <div class="thumbnail-container" onclick="showImage(1, true)">
+            <img src="/images/冬至.jpg" alt="Thumbnail 冬至">
+        </div>
+        <div class="thumbnail-container" onclick="showImage(2, true)">
+            <img src="/images/石门.jpg" alt="Thumbnail 石门">
+        </div>
+        <div class="thumbnail-container" onclick="showImage(3, true)">
+            <img src="/images/石门1.jpg" alt="Thumbnail 石门1">
+        </div>
+        <div class="thumbnail-container" onclick="showImage(4, true)">
+            <img src="/images/石门2.jpg" alt="Thumbnail 石门2">
+        </div>
+        <div class="thumbnail-container" onclick="showImage(5, true)">
+            <img src="/images/石门音乐.jpg" alt="Thumbnail 石门音乐">
+        </div>
+        <div class="thumbnail-container" onclick="showImage(6, true)">
+            <img src="/images/红林花海.jpg" alt="Thumbnail 红林花海">
+        </div>
+        <div class="thumbnail-container" onclick="showImage(7, true)">
+            <img src="/images/羽毛球赛.jpg" alt="Thumbnail 羽毛球赛">
+        </div>
+        <div class="thumbnail-container" onclick="showImage(8, true)">
+            <img src="/images/课题组合照.jpg" alt="Thumbnail 课题组合照">
+        </div>
+        <div class="thumbnail-container" onclick="showImage(9, true)">
+            <img src="/images/毕业典礼合照.jpg" alt="Thumbnail 毕业典礼合照">
+        </div>
+        <div class="thumbnail-container" onclick="showImage(10, true)">
+            <img src="/images/龙林毕业聚餐.jpg" alt="Thumbnail 龙林毕业聚餐">
+        </div>
+        <div class="thumbnail-container" onclick="showImage(11, true)">
+            <img src="/images/大南山_1.jpg" alt="Thumbnail 大南山_1">
+        </div>
+        <div class="thumbnail-container" onclick="showImage(12, true)">
+            <img src="/images/大南山_2.jpg" alt="Thumbnail 大南山_2">
+        </div>
+        <div class="thumbnail-container" onclick="showImage(13, true)">
+            <img src="/images/大南山_3.jpg" alt="Thumbnail 大南山_3">
+        </div>
+        <div class="thumbnail-container" onclick="showImage(14, true)">
+            <img src="/images/大南山_4.jpg" alt="Thumbnail 大南山_4">
+        </div>
+        <div class="thumbnail-container" onclick="showImage(15, true)">
+            <img src="/images/大南山_5.jpg" alt="Thumbnail 大南山_5">
+        </div>
+        <div class="thumbnail-container" onclick="showImage(16, true)">
+            <img src="/images/大南山_6.jpg" alt="Thumbnail 大南山_6">
+        </div>
+    </div>
+    <div class="gallery-main">
+        <button class="gallery-nav left" onclick="showPreviousImage()">&#10094;</button>
+        <img src="/images/清远漂流.jpg" alt="Main Image" id="mainImage">
+        <button class="gallery-nav right" onclick="showNextImage()">&#10095;</button>
+    </div>
+</div>
+
 <script>
-let currentImageIndex = 0;
-let autoSwitchInterval = null;
-const autoSwitchDelay = 8000; // 8秒切换
-const images = Array.from(document.querySelectorAll('.thumbnail-container'));
+    const images = [
+        { src: '/images/清远漂流.jpg'},
+        { src: '/images/冬至.jpg' },
+        { src: '/images/石门.jpg' },
+        { src: '/images/石门1.jpg' },
+        { src: '/images/石门2.jpg' },
+        { src: '/images/石门音乐.jpg' },
+        { src: '/images/红林花海.jpg' },
+        { src: '/images/羽毛球赛.jpg' },
+        { src: '/images/课题组合照.jpg' },
+        { src: '/images/毕业典礼合照.jpg' },
+        { src: '/images/龙林毕业聚餐.jpg' },
+        { src: '/images/大南山_1.jpg' },
+        { src: '/images/大南山_2.jpg' },
+        { src: '/images/大南山_3.jpg' },
+        { src: '/images/大南山_4.jpg' },
+        { src: '/images/大南山_5.jpg' },
+        { src: '/images/大南山_6.jpg' },
+    ];
 
-// 初始化加载后自动播放
-document.addEventListener('DOMContentLoaded', () => {
-  startAutoSwitch();
-});
+    let currentIndex = 0;
+    let autoSwitchInterval;
+    const transitionTime = 1000; // 1 second
+    const quickTransitionTime = 500; // 0.5 second
+    const autoSwitchDelay = 5000; // 自动切换间隔（5秒）
 
-function startAutoSwitch() {
-  if (autoSwitchInterval) clearInterval(autoSwitchInterval);
-  autoSwitchInterval = setInterval(() => showNextImage(), autoSwitchDelay);
-}
+    // 显示指定图像并应用平滑过渡
+    function showImage(index, quick = false) {
+        currentIndex = index;
+        const mainImage = document.getElementById('mainImage');
 
-function handleNavClick(offset) {
-  const newIndex = (currentImageIndex + offset + images.length) % images.length;
-  showImage(newIndex);
-  startAutoSwitch(); // 每次交互后重置定时器
-}
+        if (quick) {
+            mainImage.style.transition = `opacity ${quickTransitionTime}ms ease-in-out`;
+        } else {
+            mainImage.style.transition = `opacity ${transitionTime}ms ease-in-out`;
+        }
 
-function showImage(index) {
-  const newMainImage = images[index].querySelector('img').cloneNode();
-  newMainImage.src = newMainImage.src.replace('150x150', '1200x500'); // 动态加载大图
-  
-  // 平滑过渡动画
-  const mainImage = document.getElementById('mainImage');
-  mainImage.style.opacity = 0;
-  setTimeout(() => {
-    mainImage.src = newMainImage.src;
-    mainImage.alt = newMainImage.alt.replace('缩略图', '');
-    mainImage.style.opacity = 1;
-    currentImageIndex = index;
-    updateActiveThumbnail();
-  }, 300);
-}
+        mainImage.style.opacity = 0;
 
-function updateActiveThumbnail() {
-  images.forEach((img, index) => {
-    img.classList.toggle('active', index === currentImageIndex);
-    img.style.opacity = index === currentImageIndex ? 1 : 0.6;
-  });
-}
+        setTimeout(() => {
+            mainImage.src = images[index].src;
+            mainImage.style.opacity = 1;
+        }, quick ? quickTransitionTime : transitionTime);
 
-function showNextImage() {
-  handleNavClick(1);
-}
+        resetAutoSwitch();  // 用户点击时重启计时器
+    }
 
-// function handleImageError(img) {
-//   console.error('图像加载失败:', img.src);
-//   img.src = '{{ "images/placeholder.jpg" | absURL }}';
-//   img.alt = '图片暂时无法加载，请稍后刷新尝试';
-// }
+    // 显示下一个图像
+    function showNextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex, true);
+    }
+
+    // 显示上一个图像
+    function showPreviousImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex, true);
+    }
+
+    // 启动自动切换图像
+    function autoSwitchImages() {
+        autoSwitchInterval = setInterval(showNextImage, autoSwitchDelay); // 每5秒自动切换
+    }
+
+    // 重置自动切换计时器
+    function resetAutoSwitch() {
+        clearInterval(autoSwitchInterval);  // 清除当前的定时器
+        autoSwitchImages();  // 重新启动自动切换
+    }
+
+    // 页面加载完成后启动自动切换
+    document.addEventListener('DOMContentLoaded', () => {
+        autoSwitchImages();  // 页面加载后启动自动切换
+    });
 </script>
+
