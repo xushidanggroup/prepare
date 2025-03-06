@@ -1,95 +1,140 @@
-<style>
-    h1 {
-        text-align: center;
-        margin-bottom: 1px;
-    }
+---
+title: Gallery
+date: 2023-06-19T12:00:00Z
+---
 
+<style>
+    /* 基础样式 */
     .gallery {
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 2rem 5%;
+        max-width: 1600px;
+        margin: 0 auto;
     }
 
+    h1 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        font-size: 2.5rem;
+        color: #2c3e50;
+    }
+
+    /* 缩略图区域 */
     .gallery-thumbnails {
-        display: flex;
-        justify-content: start;
-        gap: 10px;
+        display: grid;
+        grid-auto-flow: column;
+        gap: 1rem;
         overflow-x: auto;
-        white-space: nowrap;
+        padding-bottom: 1rem;
         width: 100%;
-        padding: 1px;
-        box-sizing: border-box;
-        min-height: 120px; /* 确保容器可见 */
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
     }
 
     .thumbnail-container {
-        display: inline-block;
+        scroll-snap-align: start;
+        flex: 0 0 auto;
+        width: 150px;
+        height: 100px;
+        border-radius: 8px;
+        overflow: hidden;
         cursor: pointer;
-        position: relative;
         transition: transform 0.3s;
+        border: 2px solid transparent;
+    }
+
+    .thumbnail-container:hover {
+        transform: scale(1.05);
+    }
+
+    .thumbnail-container.active {
+        border-color: #2196F3;
+        transform: scale(1.08);
     }
 
     .thumbnail-container img {
-        max-width: 150px;
-        max-height: 100px;
-        width: auto;
-        height: auto;
-        border: 2px solid transparent;
-        transition: transform 0.3s;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
-    .thumbnail-container.active img {
-        transform: scale(1.15);
-        border-color: #2196F3;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
+    /* 主图区域 */
     .gallery-main {
         width: 100%;
-        max-width: 100%;
-        text-align: center;
         position: relative;
-        margin-top: 20px;
-        min-height: 500px; /* 确保主图区域可见 */
+        margin-top: 2rem;
+        aspect-ratio: 16/9;
     }
 
     .gallery-main img {
-        max-width: 100%;
-        max-height: 80vh;
-        height: auto;
-        border: none;
-        transition: opacity 1s ease-in-out;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        transition: opacity 0.5s ease;
     }
 
+    /* 导航按钮 */
     .gallery-nav {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
+        background: rgba(0,0,0,0.7);
         color: white;
         border: none;
-        font-size: 2em;
-        padding: 5px 15px;
+        width: 40px;
+        height: 60px;
+        border-radius: 8px;
+        font-size: 1.5rem;
         cursor: pointer;
-        z-index: 1;
+        opacity: 0.8;
+        transition: opacity 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .gallery-nav.left { left: 5px; }
-    .gallery-nav.right { right: 5px; }
+    .gallery-nav:hover {
+        opacity: 1;
+    }
 
-    /* 滚动条样式 */
-    .gallery-thumbnails::-webkit-scrollbar {
-        height: 8px;
+    .gallery-nav.left { left: 15px; }
+    .gallery-nav.right { right: 15px; }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+        .gallery {
+            padding: 1.5rem;
+        }
+
+        .thumbnail-container {
+            width: 120px;
+            height: 80px;
+        }
+
+        .gallery-main {
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-nav {
+            width: 35px;
+            height: 50px;
+            font-size: 1.2rem;
+        }
     }
-    .gallery-thumbnails::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 4px;
-    }
-    .gallery-thumbnails::-webkit-scrollbar-thumb:hover {
-        background: #555;
-    }
-    .gallery-thumbnails::-webkit-scrollbar-track {
-        background: #f1f1f1;
+
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 2rem;
+        }
+
+        .thumbnail-container {
+            width: 100px;
+            height: 70px;
+        }
     }
 </style>
 
@@ -97,18 +142,14 @@
     <h1>Gallery</h1>
     <div class="gallery-thumbnails" id="thumbnailContainer"></div>
     <div class="gallery-main">
-        <button class="gallery-nav left" onclick="showPreviousImage()">&#10094;</button>
+        <button class="gallery-nav left" onclick="showPreviousImage()">❮</button>
         <img src="" alt="Main Image" id="mainImage" style="opacity:0;">
-        <button class="gallery-nav right" onclick="showNextImage()">&#10095;</button>
+        <button class="gallery-nav right" onclick="showNextImage()">❯</button>
     </div>
 </div>
 
 <script>
-// 全局变量
-let currentIndex = 0;
-let autoSwitchInterval;
-
-// 配置参数
+// 配置部分
 const imageBasePath = '/images/';
 const imageFiles = [
     '冬至.jpg',
@@ -120,88 +161,104 @@ const imageFiles = [
     '大南山_6.jpg'
 ];
 
-// 生成图片对象
-const images = imageFiles.map(fileName => ({
-    src: `${imageBasePath}${fileName}`,
-    alt: fileName.replace(/_/g, ' ').replace(/\..+$/, '')
-}));
+// 全局变量
+let currentIndex = 0;
+let autoSwitchInterval;
+
+// 初始化画廊
+function initGallery() {
+    generateThumbnails();
+    if(imageFiles.length > 0) {
+        preloadImages().then(() => {
+            showImage(0);
+            autoSwitchImages();
+        });
+    }
+}
 
 // 生成缩略图
 function generateThumbnails() {
     const container = document.getElementById('thumbnailContainer');
     container.innerHTML = '';
     
-    images.forEach((img, index) => {
+    imageFiles.forEach((file, index) => {
         const thumbnail = document.createElement('div');
         thumbnail.className = 'thumbnail-container';
-        thumbnail.innerHTML = `<img src="${img.src}" alt="Thumbnail ${img.alt}">`;
+        thumbnail.innerHTML = `<img src="${imageBasePath}${file}" alt="Thumbnail">`;
         thumbnail.onclick = () => showImage(index, true);
         container.appendChild(thumbnail);
     });
 }
 
-// 更新激活状态
-function updateActiveThumbnail(index) {
-    document.querySelectorAll('.thumbnail-container').forEach((container, i) => {
-        container.classList.toggle('active', i === index);
-    });
-}
-
-// 图片切换核心函数
+// 图片切换
 async function showImage(index, quick = false) {
-    if (index < 0 || index >= images.length) return;
+    if(index < 0 || index >= imageFiles.length) return;
     
     const mainImage = document.getElementById('mainImage');
-    mainImage.style.transition = `opacity ${quick ? 500 : 1000}ms`;
+    mainImage.style.transition = `opacity ${quick ? 300 : 500}ms`;
     mainImage.style.opacity = 0;
 
-    // 使用实际图片路径加载
-    const actualSrc = await new Promise(resolve => {
-        const img = new Image();
-        img.src = images[index].src;
-        img.onload = () => resolve(img.src);
-        img.onerror = () => resolve('/images/fallback.jpg');
-    });
-
-    setTimeout(() => {
-        mainImage.src = actualSrc;
-        mainImage.alt = images[index].alt;
-        mainImage.style.opacity = 1;
-        currentIndex = index;
-        updateActiveThumbnail(index);
-    }, quick ? 500 : 1000);
-
+    await new Promise(resolve => setTimeout(resolve, quick ? 300 : 500));
+    
+    mainImage.src = `${imageBasePath}${imageFiles[index]}`;
+    mainImage.style.opacity = 1;
+    currentIndex = index;
+    
+    updateActiveThumbnail();
     resetAutoSwitch();
+}
+
+// 更新激活状态
+function updateActiveThumbnail() {
+    document.querySelectorAll('.thumbnail-container').forEach((container, i) => {
+        container.classList.toggle('active', i === currentIndex);
+    });
 }
 
 // 导航功能
 function showNextImage() {
-    currentIndex = (currentIndex + 1) % images.length;
+    currentIndex = (currentIndex + 1) % imageFiles.length;
     showImage(currentIndex, true);
 }
 
 function showPreviousImage() {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    currentIndex = (currentIndex - 1 + imageFiles.length) % imageFiles.length;
     showImage(currentIndex, true);
 }
 
-// 自动切换控制
-function resetAutoSwitch() {
-    clearInterval(autoSwitchInterval);
+// 自动播放
+function autoSwitchImages() {
     autoSwitchInterval = setInterval(showNextImage, 5000);
 }
 
-// 键盘控制
+function resetAutoSwitch() {
+    clearInterval(autoSwitchInterval);
+    autoSwitchImages();
+}
+
+// 图片预加载
+function preloadImages() {
+    return Promise.all(imageFiles.map(file => {
+        return new Promise(resolve => {
+            const img = new Image();
+            img.src = `${imageBasePath}${file}`;
+            img.onload = resolve;
+            img.onerror = resolve;
+        });
+    }));
+}
+
+// 事件监听
+document.addEventListener('DOMContentLoaded', initGallery);
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') showPreviousImage();
-    if (e.key === 'ArrowRight') showNextImage();
+    if(e.key === 'ArrowLeft') showPreviousImage();
+    if(e.key === 'ArrowRight') showNextImage();
 });
 
-// 初始化
-document.addEventListener('DOMContentLoaded', () => {
-    generateThumbnails();
-    if (images.length > 0) {
-        showImage(0, false);
-    }
+// 响应式调整
+window.addEventListener('resize', () => {
+    document.querySelectorAll('.thumbnail-container').forEach(container => {
+        container.style.transform = 'scale(1)';
+    });
 });
 </script>
