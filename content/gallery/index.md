@@ -105,38 +105,8 @@ date: 2023-06-19T12:00:00Z
 <div class="gallery">
     <h1>Gallery</h1>
     <div class="gallery-thumbnails">
-        <div class="thumbnail-container" onclick="showImage(0, true)">
-            <img src="/images/清远漂流.jpg" alt="Thumbnail 清远漂流">
-        </div>
         <div class="thumbnail-container" onclick="showImage(1, true)">
             <img src="/images/冬至.jpg" alt="Thumbnail 冬至">
-        </div>
-        <div class="thumbnail-container" onclick="showImage(2, true)">
-            <img src="/images/石门.jpg" alt="Thumbnail 石门">
-        </div>
-        <div class="thumbnail-container" onclick="showImage(3, true)">
-            <img src="/images/石门1.jpg" alt="Thumbnail 石门1">
-        </div>
-        <div class="thumbnail-container" onclick="showImage(4, true)">
-            <img src="/images/石门2.jpg" alt="Thumbnail 石门2">
-        </div>
-        <div class="thumbnail-container" onclick="showImage(5, true)">
-            <img src="/images/石门音乐.jpg" alt="Thumbnail 石门音乐">
-        </div>
-        <div class="thumbnail-container" onclick="showImage(6, true)">
-            <img src="/images/红林花海.jpg" alt="Thumbnail 红林花海">
-        </div>
-        <div class="thumbnail-container" onclick="showImage(7, true)">
-            <img src="/images/羽毛球赛.jpg" alt="Thumbnail 羽毛球赛">
-        </div>
-        <div class="thumbnail-container" onclick="showImage(8, true)">
-            <img src="/images/课题组合照.jpg" alt="Thumbnail 课题组合照">
-        </div>
-        <div class="thumbnail-container" onclick="showImage(9, true)">
-            <img src="/images/毕业典礼合照.jpg" alt="Thumbnail 毕业典礼合照">
-        </div>
-        <div class="thumbnail-container" onclick="showImage(10, true)">
-            <img src="/images/龙林毕业聚餐.jpg" alt="Thumbnail 龙林毕业聚餐">
         </div>
         <div class="thumbnail-container" onclick="showImage(11, true)">
             <img src="/images/大南山_1.jpg" alt="Thumbnail 大南山_1">
@@ -157,26 +127,11 @@ date: 2023-06-19T12:00:00Z
             <img src="/images/大南山_6.jpg" alt="Thumbnail 大南山_6">
         </div>
     </div>
-    <div class="gallery-main">
-        <button class="gallery-nav left" onclick="showPreviousImage()">&#10094;</button>
-        <img src="/images/清远漂流.jpg" alt="Main Image" id="mainImage">
-        <button class="gallery-nav right" onclick="showNextImage()">&#10095;</button>
-    </div>
 </div>
 
 <script>
     const images = [
-        { src: '/images/清远漂流.jpg'},
         { src: '/images/冬至.jpg' },
-        { src: '/images/石门.jpg' },
-        { src: '/images/石门1.jpg' },
-        { src: '/images/石门2.jpg' },
-        { src: '/images/石门音乐.jpg' },
-        { src: '/images/红林花海.jpg' },
-        { src: '/images/羽毛球赛.jpg' },
-        { src: '/images/课题组合照.jpg' },
-        { src: '/images/毕业典礼合照.jpg' },
-        { src: '/images/龙林毕业聚餐.jpg' },
         { src: '/images/大南山_1.jpg' },
         { src: '/images/大南山_2.jpg' },
         { src: '/images/大南山_3.jpg' },
