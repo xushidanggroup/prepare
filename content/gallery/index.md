@@ -1,45 +1,25 @@
 <style>
     h1 {
-    text-align: center;
-    margin-bottom: 2rem;
+        text-align: center;
+        margin-bottom: 1px;
     }
 
     .gallery {
-    width: 100%;
-    max-width: 100%;
-    padding: 0 5%;
-    margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .gallery-thumbnails {
-    display: flex;
-    gap: 15px;
-    padding: 15px 0;
-    overflow-x: auto;
-    width: 100%;
-    }
-
-    .gallery-main {
-    width: 90%;
-    max-width: 1600px;
-    margin: 30px auto;
-    position: relative;
-    }
-
-    @media (min-width: 1920px) {
-    .gallery-main {
-        width: 85%;
-    }
-    
-    .gallery-thumbnails {
-        justify-content: center;
-    }
-    }
-
-    @media (max-width: 768px) {
-    .gallery-main {
-        width: 95%;
-    }
+        display: flex;
+        justify-content: start;
+        gap: 10px;
+        overflow-x: auto;
+        white-space: nowrap;
+        width: 100%;
+        padding: 1px;
+        box-sizing: border-box;
+        min-height: 120px; /* 确保容器可见 */
     }
 
     .thumbnail-container {
