@@ -1,190 +1,230 @@
+---
+title: Gallery
+date: 2023-06-19T12:00:00Z
+---
+
 <style>
-    /* 基础容器 */
-    .gallery-container {
-        width: 100%;
-        max-width: 100%;
-        padding: 20px 0;
-        margin: 0 auto;
-    }
+/* 基础样式 */
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
 
-    /* 主图区域 */
-    .main-view {
-        width: 90%;
-        height: 70vh;
-        margin: 0 auto;
-        position: relative;
-    }
+/* 分类筛选 */
+.gallery-filter {
+    text-align: center;
+    margin-bottom: 30px;
+}
 
-    #mainImage {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        transition: opacity 0.4s ease;
-    }
+.filter-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    margin: 0 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
 
-    /* 缩略图轨道 */
-    .thumbnails-track {
-        display: flex;
-        gap: 12px;
-        padding: 20px 5%;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-    }
+.filter-btn.active {
+    background: #2196F3;
+    color: white;
+    border-color: #2196F3;
+}
 
-    .thumbnail-item {
-        flex: 0 0 180px;
-        height: 120px;
-        cursor: pointer;
-        border: 2px solid transparent;
-        transition: all 0.3s ease;
-    }
+/* 瀑布流布局 */
+.masonry-grid {
+    column-count: 4;
+    column-gap: 15px;
+}
 
-    .thumbnail-item.active {
-        border-color: #2196F3;
-        transform: scale(1.05);
-    }
+.grid-item {
+    break-inside: avoid;
+    margin-bottom: 15px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
 
-    .thumbnail-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+.grid-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
 
-    /* 导航按钮 */
-    .nav-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(0,0,0,0.7);
-        color: white;
-        border: none;
-        width: 40px;
-        height: 60px;
-        font-size: 24px;
-        cursor: pointer;
-        opacity: 0.9;
-        z-index: 10;
-    }
+/* 灯箱样式 */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 1000;
+}
 
-    .nav-btn:hover {
-        opacity: 1;
-    }
+.lightbox-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90%;
+}
 
-    .prev-btn { left: 2%; }
-    .next-btn { right: 2%; }
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    padding: 20px;
+    user-select: none;
+}
 
-    /* 响应式设计 */
-    @media (min-width: 1600px) {
-        .main-view { width: 85%; }
-        .thumbnail-item { flex: 0 0 220px; height: 150px; }
-    }
+.prev-btn { left: 20px; }
+.next-btn { right: 20px; }
 
-    @media (max-width: 768px) {
-        .main-view { height: 60vh; }
-        .thumbnail-item { flex: 0 0 140px; height: 100px; }
-        .nav-btn { width: 35px; height: 50px; }
-    }
+/* 响应式布局 */
+@media (max-width: 992px) {
+    .masonry-grid { column-count: 3; }
+}
 
-    @media (max-width: 480px) {
-        .main-view { height: 50vh; }
-        .thumbnail-item { flex: 0 0 120px; height: 80px; }
-    }
+@media (max-width: 768px) {
+    .masonry-grid { column-count: 2; }
+}
+
+@media (max-width: 480px) {
+    .masonry-grid { column-count: 1; }
+    .filter-btn { padding: 6px 15px; }
+}
 </style>
 
 <div class="gallery-container">
-    <div class="main-view">
-        <button class="nav-btn prev-btn" onclick="showPrev()">❮</button>
-        <img id="mainImage" src="" alt="Main Image">
-        <button class="nav-btn next-btn" onclick="showNext()">❯</button>
+    <!-- 分类筛选 -->
+    <div class="gallery-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="nature">Nature</button>
+        <button class="filter-btn" data-filter="event">Events</button>
+        <button class="filter-btn" data-filter="group">Group Photos</button>
     </div>
-    <div class="thumbnails-track" id="thumbnailsContainer"></div>
+
+    <!-- 图片容器 -->
+    <div class="masonry-grid">
+        <!-- 示例图片数据 - 需要替换成实际图片 -->
+        <div class="grid-item" data-category="nature">
+            <img src="/images/冬至.jpg" alt="Winter Solstice">
+        </div>
+        <div class="grid-item" data-category="event">
+            <img src="/images/大南山_1.jpg" alt="Mountain 1">
+        </div>
+        <!-- 更多图片... -->
+    </div>
+
+    <!-- 灯箱 -->
+    <div class="lightbox">
+        <span class="lightbox-nav prev-btn">❮</span>
+        <img class="lightbox-content" src="" alt="Enlarged View">
+        <span class="lightbox-nav next-btn">❯</span>
+    </div>
 </div>
 
 <script>
-// 配置信息
-const IMAGE_PATH = '/images/';
-const IMAGE_LIST = [
-    '冬至.jpg',
-    '大南山_1.jpg',
-    '大南山_2.jpg',
-    '大南山_3.jpg',
-    '大南山_4.jpg',
-    '大南山_5.jpg',
-    '大南山_6.jpg'
+// 图片数据配置
+const galleryData = [
+    { src: '/images/冬至.jpg', category: 'nature', title: 'Winter Solstice' },
+    { src: '/images/大南山_1.jpg', category: 'event', title: 'Mountain 1' },
+    // 添加更多图片...
 ];
-
-// 系统状态
-let currentIndex = 0;
-let autoPlayTimer = null;
 
 // 初始化画廊
 function initGallery() {
-    // 生成缩略图
-    const container = document.getElementById('thumbnailsContainer');
-    IMAGE_LIST.forEach((img, index) => {
-        const thumb = document.createElement('div');
-        thumb.className = 'thumbnail-item';
-        thumb.innerHTML = `<img src="${IMAGE_PATH}${img}" alt="Thumb ${index + 1}">`;
-        thumb.onclick = () => switchImage(index);
-        container.appendChild(thumb);
-    });
+    const grid = document.querySelector('.masonry-grid');
+    
+    // 动态生成图片元素
+    grid.innerHTML = galleryData.map(item => `
+        <div class="grid-item" data-category="${item.category}">
+            <img src="${item.src}" alt="${item.title}">
+        </div>
+    `).join('');
 
-    // 加载首图
-    switchImage(0);
-    startAutoPlay();
+    // 绑定事件
+    initFilters();
+    initLightbox();
 }
 
-// 核心切换函数
-function switchImage(index) {
-    if (index < 0 || index >= IMAGE_LIST.length) return;
+// 分类筛选功能
+function initFilters() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
     
-    const mainImg = document.getElementById('mainImage');
-    const thumbs = document.querySelectorAll('.thumbnail-item');
-    
-    // 淡出过渡
-    mainImg.style.opacity = 0;
-    
-    setTimeout(() => {
-        mainImg.src = IMAGE_PATH + IMAGE_LIST[index];
-        mainImg.alt = `Gallery Image ${index + 1}`;
-        mainImg.style.opacity = 1;
-        
-        // 更新缩略图状态
-        thumbs.forEach((thumb, i) => {
-            thumb.classList.toggle('active', i === index);
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // 更新激活状态
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            // 筛选图片
+            const filter = btn.dataset.filter;
+            document.querySelectorAll('.grid-item').forEach(item => {
+                const show = filter === 'all' || item.dataset.category === filter;
+                item.style.display = show ? 'block' : 'none';
+            });
         });
-        
-        currentIndex = index;
-    }, 300);
-
-    resetAutoPlay();
-}
-
-// 导航控制
-function showPrev() { switchImage((currentIndex - 1 + IMAGE_LIST.length) % IMAGE_LIST.length); }
-function showNext() { switchImage((currentIndex + 1) % IMAGE_LIST.length); }
-
-// 自动播放
-function startAutoPlay() {
-    autoPlayTimer = setInterval(showNext, 5000);
-}
-
-function resetAutoPlay() {
-    clearInterval(autoPlayTimer);
-    startAutoPlay();
-}
-
-// 事件绑定
-document.addEventListener('DOMContentLoaded', initGallery);
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') showPrev();
-    if (e.key === 'ArrowRight') showNext();
-});
-
-// 窗口调整处理
-window.addEventListener('resize', () => {
-    document.querySelectorAll('.thumbnail-item').forEach(thumb => {
-        thumb.style.transform = 'scale(1)';
     });
-});
+}
+
+// 灯箱功能
+function initLightbox() {
+    const lightbox = document.querySelector('.lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    const items = Array.from(document.querySelectorAll('.grid-item'));
+    let currentIndex = 0;
+
+    // 打开灯箱
+    document.querySelectorAll('.grid-item').forEach((item, index) => {
+        item.addEventListener('click', () => {
+            currentIndex = index;
+            updateLightbox();
+            lightbox.style.display = 'block';
+        });
+    });
+
+    // 导航功能
+    document.querySelector('.prev-btn').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        updateLightbox();
+    });
+
+    document.querySelector('.next-btn').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % items.length;
+        updateLightbox();
+    });
+
+    // 关闭灯箱
+    lightbox.addEventListener('click', (e) => {
+        if(e.target === lightbox) lightbox.style.display = 'none';
+    });
+
+    // 键盘控制
+    document.addEventListener('keydown', (e) => {
+        if(lightbox.style.display === 'block') {
+            if(e.key === 'Escape') lightbox.style.display = 'none';
+            if(e.key === 'ArrowLeft') prevImage();
+            if(e.key === 'ArrowRight') nextImage();
+        }
+    });
+
+    function updateLightbox() {
+        const activeItems = [...document.querySelectorAll('.grid-item:not([style*="none"])')];
+        const src = activeItems[currentIndex].querySelector('img').src;
+        lightboxImg.src = src;
+    }
+}
+
+// 初始化
+document.addEventListener('DOMContentLoaded', initGallery);
 </script>
