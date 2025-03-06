@@ -1,116 +1,212 @@
+---
+title: Gallery
+date: 2023-06-19T12:00:00Z
+---
+
+<style>
+    h1 {
+        text-align: center;
+        margin-bottom: 1px;
+    }
+
+    .gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery-thumbnails {
+        display: flex;
+        justify-content: start;
+        gap: 10px;
+        overflow-x: auto;
+        white-space: nowrap;
+        width: 100%;
+        padding: 1px;
+        box-sizing: border-box;
+        min-height: 120px; /* 确保容器可见 */
+    }
+
+    .thumbnail-container {
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        transition: transform 0.3s;
+    }
+
+    .thumbnail-container img {
+        max-width: 150px;
+        max-height: 100px;
+        width: auto;
+        height: auto;
+        border: 2px solid transparent;
+        transition: transform 0.3s;
+    }
+
+    .thumbnail-container.active img {
+        transform: scale(1.15);
+        border-color: #2196F3;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .gallery-main {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+        position: relative;
+        margin-top: 20px;
+        min-height: 500px; /* 确保主图区域可见 */
+    }
+
+    .gallery-main img {
+        max-width: 100%;
+        max-height: 80vh;
+        height: auto;
+        border: none;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .gallery-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        font-size: 2em;
+        padding: 5px 15px;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .gallery-nav.left { left: 5px; }
+    .gallery-nav.right { right: 5px; }
+
+    /* 滚动条样式 */
+    .gallery-thumbnails::-webkit-scrollbar {
+        height: 8px;
+    }
+    .gallery-thumbnails::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+    }
+    .gallery-thumbnails::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+    .gallery-thumbnails::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+</style>
+
+<div class="gallery">
+    <h1>Gallery</h1>
+    <div class="gallery-thumbnails" id="thumbnailContainer"></div>
+    <div class="gallery-main">
+        <button class="gallery-nav left" onclick="showPreviousImage()">&#10094;</button>
+        <img src="" alt="Main Image" id="mainImage" style="opacity:0;">
+        <button class="gallery-nav right" onclick="showNextImage()">&#10095;</button>
+    </div>
+</div>
+
 <script>
-// 声明全局变量
-let currentIndex = 0; // ✨ 新增：明确定义当前索引
+// 全局变量
+let currentIndex = 0;
 let autoSwitchInterval;
 
-// 自动配置图片列表
+// 配置参数
 const imageBasePath = '/images/';
-const imageExtensions = ['.jpg', '.jpeg', '.png'];
-
-// 🐛 修复：使用更安全的文件名处理方式
 const imageFiles = [
-    '冬至',
-    '大南山_1',
-    '大南山_2',
-    '大南山_3',
-    '大南山_4',
-    '大南山_5',
-    '大南山_6'
+    '冬至.jpg',
+    '大南山_1.jpg',
+    '大南山_2.jpg',
+    '大南山_3.jpg',
+    '大南山_4.jpg',
+    '大南山_5.jpg',
+    '大南山_6.jpg'
 ];
 
-// ✨ 改进：更健壮的路径生成逻辑
-const images = imageFiles.map(fileName => {
-    // 分离文件名和扩展名
-    const [baseName, ...rest] = fileName.split('.');
-    const extension = rest.length > 0 ? `.${rest.pop()}` : 
-        imageExtensions.find(ext => {
-            // 检查文件实际是否存在（需要服务器端配合）
-            const img = new Image();
-            img.src = `${imageBasePath}${baseName}${ext}`;
-            return img.width > 0;
-        }) || '.jpg';
-    
-    return {
-        src: `${imageBasePath}${baseName}${extension}`,
-        alt: baseName.replace(/_/g, ' ')
-    };
-});
+// 生成图片对象
+const images = imageFiles.map(fileName => ({
+    src: `${imageBasePath}${fileName}`,
+    alt: fileName.replace(/_/g, ' ').replace(/\..+$/, '')
+}));
 
-// ✨ 新增：缩略图激活状态样式
+// 生成缩略图
+function generateThumbnails() {
+    const container = document.getElementById('thumbnailContainer');
+    container.innerHTML = '';
+    
+    images.forEach((img, index) => {
+        const thumbnail = document.createElement('div');
+        thumbnail.className = 'thumbnail-container';
+        thumbnail.innerHTML = `<img src="${img.src}" alt="Thumbnail ${img.alt}">`;
+        thumbnail.onclick = () => showImage(index, true);
+        container.appendChild(thumbnail);
+    });
+}
+
+// 更新激活状态
 function updateActiveThumbnail(index) {
     document.querySelectorAll('.thumbnail-container').forEach((container, i) => {
         container.classList.toggle('active', i === index);
     });
 }
 
-// 🐛 修复：补充缺失的自动切换函数
-function resetAutoSwitch() {
-    clearInterval(autoSwitchInterval);
-    autoSwitchInterval = setInterval(showNextImage, 5000);
-}
-
-function autoSwitchImages() {
-    resetAutoSwitch();
-}
-
-// ✨ 改进：带错误处理的图片加载
-function loadImageWithFallback(src) {
-    return new Promise((resolve) => {
-        const img = new Image();
-        img.src = src;
-        img.onload = () => resolve(src);
-        img.onerror = () => resolve('/images/fallback.jpg'); // 备用图片路径
-    });
-}
-
-// ✨ 优化后的图片切换函数
+// 图片切换核心函数
 async function showImage(index, quick = false) {
-    // 边界检查
     if (index < 0 || index >= images.length) return;
     
     const mainImage = document.getElementById('mainImage');
+    mainImage.style.transition = `opacity ${quick ? 500 : 1000}ms`;
     mainImage.style.opacity = 0;
 
-    // 预加载图片
-    const actualSrc = await loadImageWithFallback(images[index].src);
-    
+    // 使用实际图片路径加载
+    const actualSrc = await new Promise(resolve => {
+        const img = new Image();
+        img.src = images[index].src;
+        img.onload = () => resolve(img.src);
+        img.onerror = () => resolve('/images/fallback.jpg');
+    });
+
     setTimeout(() => {
         mainImage.src = actualSrc;
         mainImage.alt = images[index].alt;
         mainImage.style.opacity = 1;
         currentIndex = index;
-        updateActiveThumbnail(index); // ✨ 更新激活状态
+        updateActiveThumbnail(index);
     }, quick ? 500 : 1000);
 
     resetAutoSwitch();
 }
 
-// ✨ 新增：键盘导航支持
+// 导航功能
+function showNextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex, true);
+}
+
+function showPreviousImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex, true);
+}
+
+// 自动切换控制
+function resetAutoSwitch() {
+    clearInterval(autoSwitchInterval);
+    autoSwitchInterval = setInterval(showNextImage, 5000);
+}
+
+// 键盘控制
 document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') showPreviousImage();
     if (e.key === 'ArrowRight') showNextImage();
 });
 
-// 初始化画廊
+// 初始化
 document.addEventListener('DOMContentLoaded', () => {
     generateThumbnails();
     if (images.length > 0) {
-        // ✨ 新增：加载首张图片后显示
-        loadImageWithFallback(images[0].src).then(src => {
-            mainImage.src = src;
-            mainImage.style.opacity = 1;
-        });
-        updateActiveThumbnail(0);
+        showImage(0, false);
     }
-    autoSwitchImages();
 });
 </script>
-
-<style>
-/* ✨ 新增激活状态样式 */
-.thumbnail-container.active img {
-    transform: scale(1.15);
-    border: 3px solid #2196F3;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-</style>
